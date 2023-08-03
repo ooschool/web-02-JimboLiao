@@ -16,6 +16,7 @@ import productImg_1_5 from "../../images/products-1-5.png";
 import productImg_2_1 from "../../images/products-2-1.png";
 import productImg_2_2 from "../../images/products-2-2.png";
 import ProductCard from "../../components/ProductCard";
+import jumbotronImg from "../../images/jumbotron-1.png";
 
 const brand1_products = [
   {
@@ -89,6 +90,7 @@ const Home = () => {
     <main>
       {/* jumbotron */}
       <StyledJumbotron>
+        <div className="jumbotron__mask"></div>
         <div className="jumbotron__title">
           <LogoLink />
         </div>
@@ -134,8 +136,8 @@ const Home = () => {
           </div>
           {brand1_chunks.map((chunk, rowIdx) => (
             <StyledRow key={rowIdx}>
-              {chunk.map((product, colIdx) => (
-                <StyledColumn $num={4} key={colIdx}>
+              {chunk.map((product) => (
+                <StyledColumn $num={4} key={product.id}>
                   <ProductCard
                     $backgroundImageUrl={product.url}
                     cardTitle={product.title}
@@ -151,8 +153,8 @@ const Home = () => {
           </div>
           {brand2_chunks.map((chunk, rowIdx) => (
             <StyledRow key={rowIdx}>
-              {chunk.map((product, colIdx) => (
-                <StyledColumn $num={4} key={colIdx}>
+              {chunk.map((product) => (
+                <StyledColumn $num={4} key={product.id}>
                   <ProductCard
                     $backgroundImageUrl={product.url}
                     cardTitle={product.title}
@@ -175,15 +177,22 @@ const Home = () => {
   );
 };
 
-//@todo need jumbotron image
 const StyledJumbotron = styled.section`
   padding: 240px 0px;
 
-  background-color: #fdd663;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: url(${jumbotronImg});
 
+  .jumbotron__mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
   .jumbotron__title {
     font-size: 48px;
     width: 100%;
