@@ -24,8 +24,6 @@ const RootFooter = () => {
   );
 };
 
-export default RootFooter;
-
 const StyledFooter = styled.footer`
   background-color: #3072ff;
   padding: 30px 25px;
@@ -44,3 +42,5 @@ const StyledFooter = styled.footer`
     text-align: center;
   }
 `;
+
+export default RootFooter;

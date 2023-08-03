@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 import { styled } from "styled-components";
+import LogoLink from "../../components/LogoLink";
 
 const RootHeader = () => {
   return (
     <StyledHeader>
-      <Link to="/">
-        <div className="logo">Logo</div>
-      </Link>
+      <div className="logo">
+        <LogoLink />
+      </div>
       <div className="btn-container">
         <NavBar />
         <div className="login-btn">

@@ -19,8 +19,6 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
-
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
@@ -34,3 +32,5 @@ const StyledNav = styled.nav`
     margin-right: 25px;
   }
 `;
+
+export default NavBar;
