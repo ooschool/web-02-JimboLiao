@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Image from "./Image";
+import Image from "../common/Image";
 const ProductCard = (props) => {
   return (
     <StyledCard>

@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const StyledButton = styled(Link)`
+const StyledButton = styled(Link)`
   display: inline-block;
   vertical-align: middle;
   height: 36px;
@@ -20,3 +20,5 @@ export const StyledButton = styled(Link)`
   background-color: ${(props) => (props.$primary ? "#3072ff" : "whitesmoke")};
   color: ${(props) => (props.$primary ? "whitesmoke" : "#3072ff")};
 `;
+
+export default StyledButton;

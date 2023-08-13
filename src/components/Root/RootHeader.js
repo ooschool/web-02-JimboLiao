@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar";
+import NavBar from "../common/NavBar";
 import { styled } from "styled-components";
-import LogoLink from "../../components/LogoLink";
+import LogoLink from "../common/LogoLink";
 
 const RootHeader = () => {
   return (
@@ -18,8 +18,6 @@ const RootHeader = () => {
     </StyledHeader>
   );
 };
-
-export default RootHeader;
 
 const StyledHeader = styled.header`
   background-color: #3072ff;
@@ -46,3 +44,5 @@ const StyledHeader = styled.header`
     margin-right: 25px;
   }
 `;
+
+export default RootHeader;

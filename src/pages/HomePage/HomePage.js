@@ -1,72 +1,74 @@
 import { styled } from "styled-components";
-import LogoLink from "../../components/LogoLink";
 import {
-  StyledColumn,
+  brand1Product1Img,
+  brand1Product2Img,
+  brand1Product3Img,
+  brand1Product4Img,
+  brand1Product5Img,
+  brand2Product1Img,
+  brand2Product2Img,
+  about1Img,
+  jumbotron1Img,
+} from "../../images";
+import {
+  LogoLink,
   StyledContainer,
+  StyledColumn,
   StyledRow,
-} from "../../components/StyledLayout";
-import { StyledButton } from "../../components/StyledButton";
-import Image from "../../components/Image";
-import aboutImg from "../../images/about-1.png";
-import productImg_1_1 from "../../images/products-1-1.png";
-import productImg_1_2 from "../../images/products-1-2.png";
-import productImg_1_3 from "../../images/products-1-3.png";
-import productImg_1_4 from "../../images/products-1-4.png";
-import productImg_1_5 from "../../images/products-1-5.png";
-import productImg_2_1 from "../../images/products-2-1.png";
-import productImg_2_2 from "../../images/products-2-2.png";
-import ProductCard from "../../components/ProductCard";
-import jumbotronImg from "../../images/jumbotron-1.png";
+  StyledButton,
+  Image,
+} from "../../components/common";
+import { ProductCard } from "../../components/products";
 
-const brand1_products = [
+const brand1Products = [
   {
     id: 101,
-    url: productImg_1_1,
+    url: brand1Product1Img,
     title: "Shampoo",
     price: 230,
     des: "ajoppe lsttdo jfek bvnoo",
   },
   {
     id: 102,
-    url: productImg_1_2,
+    url: brand1Product2Img,
     title: "Conditioner",
     price: 180,
     des: "abouc gooct povgooct pov okr bvn joggert avvieate overation",
   },
   {
     id: 103,
-    url: productImg_1_3,
+    url: brand1Product3Img,
     title: "Pomade",
     price: 350,
     des: "rt avvi eate overation gert",
   },
   {
     id: 104,
-    url: productImg_1_4,
+    url: brand1Product4Img,
     title: "Shampoo",
     price: 400,
     des: "fjeitg oostw gowb jodeg jgeatt opyedg",
   },
   {
     id: 105,
-    url: productImg_1_5,
+    url: brand1Product5Img,
     title: "Conditioner",
     price: 360,
     des: "eitg oostw go eate overati oostw gowb jod",
   },
 ];
 
-const brand2_products = [
+const brand2Products = [
   {
     id: 201,
-    url: productImg_2_1,
+    url: brand2Product1Img,
     title: "Hair oil",
     price: 450,
     des: "ggert avvieate overati",
   },
   {
     id: 202,
-    url: productImg_2_2,
+    url: brand2Product2Img,
     title: "Hail oil",
     price: 350,
     des: "fjeitg oostw gow",
@@ -82,10 +84,10 @@ function chunkArray(array, size) {
   return chunks;
 }
 
-const brand1_chunks = chunkArray(brand1_products, 3);
-const brand2_chunks = chunkArray(brand2_products, 3);
+const brand1Chunks = chunkArray(brand1Products, 3);
+const brand2Chunks = chunkArray(brand2Products, 3);
 
-const Home = () => {
+const HomePage = () => {
   return (
     <main>
       {/* jumbotron */}
@@ -119,7 +121,7 @@ const Home = () => {
               </div>
             </StyledColumn>
             <StyledColumn $num={6}>
-              <Image $backgroundImageUrl={aboutImg}></Image>
+              <Image $backgroundImageUrl={about1Img}></Image>
             </StyledColumn>
           </StyledRow>
         </StyledContainer>
@@ -134,7 +136,7 @@ const Home = () => {
           <div className="products-summary__subtitle">
             <h3>PAUL MITCHELL</h3>
           </div>
-          {brand1_chunks.map((chunk, rowIdx) => (
+          {brand1Chunks.map((chunk, rowIdx) => (
             <StyledRow key={rowIdx}>
               {chunk.map((product) => (
                 <StyledColumn $num={4} key={product.id}>
@@ -151,7 +153,7 @@ const Home = () => {
           <div className="products-summary__subtitle">
             <h3>MOROCCANOIL</h3>
           </div>
-          {brand2_chunks.map((chunk, rowIdx) => (
+          {brand2Chunks.map((chunk, rowIdx) => (
             <StyledRow key={rowIdx}>
               {chunk.map((product) => (
                 <StyledColumn $num={4} key={product.id}>
@@ -183,7 +185,7 @@ const StyledJumbotron = styled.section`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(${jumbotronImg});
+  background-image: url(${jumbotron1Img});
 
   .jumbotron__mask {
     background-color: rgba(0, 0, 0, 0.5);
@@ -249,4 +251,4 @@ const StyledProductSummary = styled.section`
     }
   }
 `;
-export default Home;
+export default HomePage;

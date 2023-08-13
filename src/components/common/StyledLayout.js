@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 const GRIDBASE = 12;
 const GUTTERWIDTHPX = 32;
 
-export const StyledContainer = styled.div`
+const StyledContainer = styled.div`
   max-width: 1140px;
   width: 100%;
   margin-left: auto;
@@ -13,7 +13,7 @@ export const StyledContainer = styled.div`
   text-align: center;
 `;
 
-export const StyledRow = styled.div`
+const StyledRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-left: ${-GUTTERWIDTHPX / 2}px;
@@ -23,9 +23,11 @@ export const StyledRow = styled.div`
   }
 `;
 
-export const StyledColumn = styled.div`
+const StyledColumn = styled.div`
   padding-left: ${GUTTERWIDTHPX / 2}px;
   padding-right: ${GUTTERWIDTHPX / 2}px;
   max-width: ${(props) => ((100 * props.$num) / GRIDBASE).toString()}%;
   flex: 0 0 ${(props) => ((100 * props.$num) / GRIDBASE).toString()}%;
 `;
+
+export { StyledColumn, StyledRow, StyledContainer };
