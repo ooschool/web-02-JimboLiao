@@ -1,3 +1,4 @@
+import logo1Img from "./logo-1.png";
 import about1Img from "./about-1.png";
 import jumbotron1Img from "./jumbotron-1.png";
 import brand1Product1Img from "./products-1-1.png";
@@ -9,6 +10,7 @@ import brand2Product1Img from "./products-2-1.png";
 import brand2Product2Img from "./products-2-2.png";
 
 export {
+  logo1Img,
   about1Img,
   jumbotron1Img,
   brand1Product1Img,

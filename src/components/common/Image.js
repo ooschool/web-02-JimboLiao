@@ -1,26 +1,27 @@
 import { styled } from "styled-components";
 
-const IMGRATIO = 3 / 4; // height/ width
+const imgRatio = 3 / 4; // height/ width
 
-const Image = (props) => {
+const Image = ({ $backgroundImageUrl, $backgroundSize, $imageRatio }) => {
   return (
-    <StyledBackgroundImage
-      $backgroundImageUrl={props.$backgroundImageUrl}
-      $contain={props.$contain}
+    <StyledImage
+      $backgroundImageUrl={$backgroundImageUrl}
+      $backgroundSize={$backgroundSize}
+      $imageRatio={$imageRatio}
     >
       <div className="image"></div>
-    </StyledBackgroundImage>
+    </StyledImage>
   );
 };
 
-const StyledBackgroundImage = styled.div`
+const StyledImage = styled.div`
   width: 100%;
   overflow: hidden;
   &:before {
     content: "";
     display: block;
     width: 100%;
-    padding-top: ${100 * IMGRATIO}%;
+    padding-top: ${(props) => 100 * props.$imageRatio}%;
   }
   .image {
     position: absolute;
@@ -30,9 +31,42 @@ const StyledBackgroundImage = styled.div`
     bottom: 0;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: ${(props) => (props.$contain ? "contain" : "cover")};
+    background-size: ${(props) => props.$backgroundSize};
     background-image: url(${(props) => props.$backgroundImageUrl});
   }
 `;
 
-export default Image;
+const BackgroundImage = (props) => {
+  return (
+    <Image
+      $backgroundImageUrl={props.$backgroundImageUrl}
+      $backgroundSize="cover"
+      $imageRatio={imgRatio}
+      {...props}
+    />
+  );
+};
+
+const CardImage = (props) => {
+  return (
+    <Image
+      $backgroundImageUrl={props.$backgroundImageUrl}
+      $backgroundSize="contain"
+      $imageRatio={imgRatio}
+      {...props}
+    />
+  );
+};
+
+const LogoImage = (props) => {
+  return (
+    <Image
+      $backgroundImageUrl={props.$backgroundImageUrl}
+      $backgroundSize="contain"
+      $imageRatio={1}
+      {...props}
+    />
+  );
+};
+
+export { BackgroundImage, CardImage, LogoImage };

@@ -1,12 +1,9 @@
 import { styled } from "styled-components";
-import Image from "../common/Image";
+import { CardImage } from "../common/Image";
 const ProductCard = (props) => {
   return (
     <StyledCard>
-      <Image
-        $backgroundImageUrl={props.$backgroundImageUrl}
-        $contain={true}
-      ></Image>
+      <CardImage $backgroundImageUrl={props.$backgroundImageUrl}></CardImage>
       <div className="card-body">
         <h3 className="card-title">{props.cardTitle}</h3>
         <p className="card-price">NT${props.price}</p>

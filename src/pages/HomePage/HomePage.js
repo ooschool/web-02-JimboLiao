@@ -16,7 +16,7 @@ import {
   StyledColumn,
   StyledRow,
   StyledButton,
-  Image,
+  BackgroundImage,
 } from "../../components/common";
 import { ProductCard } from "../../components/products";
 
@@ -94,7 +94,7 @@ const HomePage = () => {
       <StyledJumbotron>
         <div className="jumbotron__mask"></div>
         <div className="jumbotron__title">
-          <LogoLink />
+          <LogoLink logoWidth={"128px"} />
         </div>
       </StyledJumbotron>
 
@@ -121,7 +121,7 @@ const HomePage = () => {
               </div>
             </StyledColumn>
             <StyledColumn $num={6}>
-              <Image $backgroundImageUrl={about1Img}></Image>
+              <BackgroundImage $backgroundImageUrl={about1Img} />
             </StyledColumn>
           </StyledRow>
         </StyledContainer>
