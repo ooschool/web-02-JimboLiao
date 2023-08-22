@@ -69,4 +69,15 @@ const LogoImage = (props) => {
   );
 };
 
-export { BackgroundImage, CardImage, LogoImage };
+const ProductImage = (props) => {
+  return (
+    <Image
+      $backgroundImageUrl={props.$backgroundImageUrl}
+      $backgroundSize="contain"
+      $imageRatio={imgRatio}
+      {...props}
+    />
+  );
+};
+
+export { BackgroundImage, CardImage, LogoImage, ProductImage };

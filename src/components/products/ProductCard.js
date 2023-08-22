@@ -1,14 +1,17 @@
 import { styled } from "styled-components";
 import { CardImage } from "../common/Image";
+import { Link } from "react-router-dom";
 const ProductCard = (props) => {
   return (
     <StyledCard>
-      <CardImage $backgroundImageUrl={props.$backgroundImageUrl}></CardImage>
-      <div className="card-body">
-        <h3 className="card-title">{props.cardTitle}</h3>
-        <p className="card-price">NT${props.price}</p>
-        <p className="card-des">{props.des}</p>
-      </div>
+      <Link to={`/products/${props.productId}`}>
+        <CardImage $backgroundImageUrl={props.$backgroundImageUrl}></CardImage>
+        <div className="card-body">
+          <h3 className="card-title">{props.cardTitle}</h3>
+          <p className="card-price">NT${props.price}</p>
+          <p className="card-des">{props.des}</p>
+        </div>
+      </Link>
     </StyledCard>
   );
 };
@@ -16,7 +19,9 @@ const ProductCard = (props) => {
 const StyledCard = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-
+  a {
+    color: black;
+  }
   .card-body {
     padding: 16px;
     overflow: hidden;
@@ -33,6 +38,7 @@ const StyledCard = styled.div`
       padding-bottom: 4px;
     }
     .card-des {
+      text-align: left;
       height: 72px;
       margin-bottom: 16px;
       font-size: 16px;

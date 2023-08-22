@@ -124,6 +124,14 @@ function getProductsByBrand(brand) {
   return brandProducts;
 }
 
+export function getProductById(productId) {
+  return products.find((product) => product.id === productId) || null;
+}
+
+export function getBrandByBrandName(brandName) {
+  return brands.find((brand) => brand.brandName === brandName) || null;
+}
+
 const brand1Products = getProductsByBrand(brands[0].brandName);
 const brand2Products = getProductsByBrand(brands[1].brandName);
 

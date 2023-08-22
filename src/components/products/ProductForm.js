@@ -1,6 +1,5 @@
-import { brandNames, productCategory } from "../../data/products";
 import { FormSelect, StyledRow, StyledColumn, SearchBar } from "../common";
-import { useState } from "react";
+
 const ProductForm = ({
   handleSelectBrand,
   handleSelectCategory,
@@ -12,32 +11,26 @@ const ProductForm = ({
     <form>
       <StyledRow>
         <StyledColumn $num={4}>
-          <label htmlFor="brand">
-            Brand :
-            <FormSelect
-              name="brand"
-              id="brand"
-              options={brandOptions}
-              onChange={handleSelectBrand}
-            />
-          </label>
+          <label htmlFor="brand">Brand : </label>
+          <FormSelect
+            name="brand"
+            id="brand"
+            options={brandOptions}
+            onChange={handleSelectBrand}
+          />
         </StyledColumn>
         <StyledColumn $num={4}>
-          <label htmlFor="category">
-            Category :
-            <FormSelect
-              name="category"
-              id="category"
-              options={categoryOptions}
-              onChange={handleSelectCategory}
-            />
-          </label>
+          <label htmlFor="category">Category : </label>
+          <FormSelect
+            name="category"
+            id="category"
+            options={categoryOptions}
+            onChange={handleSelectCategory}
+          />
         </StyledColumn>
         <StyledColumn $num={4}>
-          <label htmlFor="search">
-            Search :
-            <SearchBar id="search" name="search" onChange={handleSearch} />
-          </label>
+          <label htmlFor="search">Search : </label>
+          <SearchBar id="search" name="search" onChange={handleSearch} />
         </StyledColumn>
       </StyledRow>
     </form>

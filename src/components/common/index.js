@@ -1,16 +1,17 @@
-import { BackgroundImage, CardImage } from "./Image";
+import { BackgroundImage, CardImage, ProductImage } from "./Image";
 import LogoLink from "./LogoLink";
 import NavBar from "./NavBar";
-import StyledButton from "./StyledButton";
+import StyledLink from "./StyledLink";
 import { StyledColumn, StyledRow, StyledContainer } from "./StyledLayout";
 import { FormSelect } from "./FormSelect";
 import { SearchBar } from "./SearchBar";
 export {
   BackgroundImage,
   CardImage,
+  ProductImage,
   LogoLink,
   NavBar,
-  StyledButton,
+  StyledLink,
   StyledColumn,
   StyledRow,
   StyledContainer,

@@ -8,7 +8,7 @@ import { Root } from "./components/Root";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ErrorPage } from "./pages/ErrorPage";
-import { ProductsPage } from "./pages/ProductsPage";
+import { ProductsPage, ProductDetailPage } from "./pages/ProductsPage";
 import { CartPage } from "./pages/CartPage";
 import { LoginPage } from "./pages/LoginPage";
 
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
       { path: "", element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
       { path: "products", element: <ProductsPage /> },
+      { path: "products/:productId", element: <ProductDetailPage /> },
       { path: "cart", element: <CartPage /> },
       { path: "login", element: <LoginPage /> },
     ],

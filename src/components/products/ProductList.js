@@ -19,6 +19,7 @@ const ProductList = ({ products }) => {
           {chunk.map((product) => (
             <StyledColumn $num={4} key={product.id}>
               <ProductCard
+                productId={product.id}
                 $backgroundImageUrl={product.imgUrl}
                 cardTitle={product.productName}
                 price={product.price}

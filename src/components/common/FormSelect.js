@@ -22,7 +22,6 @@ const SelectModal = ({
 
 const StyledSelect = styled.div`
   display: inline-block;
-  margin-left: 5px;
 `;
 
 const FormSelect = (props) => {

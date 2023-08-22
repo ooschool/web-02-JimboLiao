@@ -8,12 +8,15 @@ const ProductsPage = () => {
   const [brandOptions] = useState(brandNames);
   const [categoryOptions] = useState(productCategory);
 
+  //@todo form select brand
   const handleSelectBrand = (event) => {
     console.log("brand select = ", event.target.value);
   };
+  //@todo form select category
   const handleSelectCategory = (event) => {
     console.log("category select = ", event.target.value);
   };
+  //@todo form search
   const handleSearch = (event) => {
     console.log("search  = ", event.target.value);
   };

@@ -5,7 +5,7 @@ import {
   StyledContainer,
   StyledColumn,
   StyledRow,
-  StyledButton,
+  StyledLink,
   BackgroundImage,
 } from "../../components/common";
 import { brands, brand1Products, brand2Products } from "../../data/products";
@@ -39,9 +39,9 @@ const HomePage = () => {
                   cxoolltc jllltc jll go cdoeedgo cdoeed
                 </p>
                 <div>
-                  <StyledButton $primary to={"/about"}>
+                  <StyledLink $primary to={"/about"}>
                     More
-                  </StyledButton>
+                  </StyledLink>
                 </div>
               </div>
             </StyledColumn>
@@ -61,9 +61,9 @@ const HomePage = () => {
           <ProductSummary brands={brands} allBrandProducts={allBrandProducts} />
           <footer className="products-summary__footer">
             <p>Find the best product for you!</p>
-            <StyledButton $primary to={"/products"}>
+            <StyledLink $primary to={"/products"}>
               Search
-            </StyledButton>
+            </StyledLink>
           </footer>
         </StyledContainer>
       </StyledProductSummary>
