@@ -18,9 +18,7 @@ const StyledRow = styled.div`
   flex-wrap: wrap;
   margin-left: ${-GUTTERWIDTHPX / 2}px;
   margin-right: ${-GUTTERWIDTHPX / 2}px;
-  &:not(:last-child) {
-    margin-bottom: 64px;
-  }
+  margin-bottom: 64px;
 `;
 
 const StyledColumn = styled.div`

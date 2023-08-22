@@ -3,7 +3,8 @@ import LogoLink from "./LogoLink";
 import NavBar from "./NavBar";
 import StyledButton from "./StyledButton";
 import { StyledColumn, StyledRow, StyledContainer } from "./StyledLayout";
-
+import { FormSelect } from "./FormSelect";
+import { SearchBar } from "./SearchBar";
 export {
   BackgroundImage,
   CardImage,
@@ -13,4 +14,6 @@ export {
   StyledColumn,
   StyledRow,
   StyledContainer,
+  FormSelect,
+  SearchBar,
 };

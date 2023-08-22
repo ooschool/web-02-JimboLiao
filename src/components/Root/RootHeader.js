@@ -7,7 +7,7 @@ const RootHeader = () => {
   return (
     <StyledHeader>
       <div className="logo">
-        <LogoLink logoWidth={"32px"} />
+        <LogoLink $logoWidth={"32px"} />
       </div>
       <div className="btn-container">
         <NavBar />
