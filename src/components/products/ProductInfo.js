@@ -1,18 +1,17 @@
 import { styled } from "styled-components";
 import { FormSelect } from "../common";
 
-const ProductInfo = ({ product, handleAddToCart }) => {
+const ProductInfo = ({ product, handleAddToCart, setAmount }) => {
   function createAmountOptions(product) {
     let options = [];
     for (let i = 1; i <= product.reserve; i++) {
-      options.push(i.toString());
+      options.push(i);
     }
     return options;
   }
 
-  //@todo select product amount
   function handleSelectAmount(event) {
-    console.log("amount select = ", event.target.value);
+    setAmount(event.target.value);
   }
 
   return (

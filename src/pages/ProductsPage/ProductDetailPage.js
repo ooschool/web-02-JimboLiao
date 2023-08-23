@@ -9,14 +9,27 @@ import {
 } from "../../components/common";
 import { styled } from "styled-components";
 import { ProductInfo, ProductIntro } from "../../components/products";
-
-//@todo add to cart function
-function handleAddToCart() {
-  console.log("Add to cart");
-}
+import { useCart } from "../../context/CartContext";
+import { useState } from "react";
 const ProductDetailPage = () => {
   const { productId } = useParams();
   const product = getProductById(productId);
+  const { cart, setCart } = useCart();
+  const [amount, setAmount] = useState(0);
+  const handleAddToCart = () => {
+    // Check if the product is already in the cart
+    const cartIndex = cart.findIndex((item) => item.id === product.id);
+    // Not in the cart
+    if (cartIndex === -1) {
+      setCart([...cart, { amount: amount, ...product }]);
+    } else {
+      // Already in the cart
+      let newCart = [...cart];
+      newCart[cartIndex].amount = amount;
+      setCart(newCart);
+    }
+    console.log(cart);
+  };
 
   /// product not found
   if (product === null)
@@ -45,6 +58,7 @@ const ProductDetailPage = () => {
                 <ProductInfo
                   product={product}
                   handleAddToCart={handleAddToCart}
+                  setAmount={setAmount}
                 />
               </StyledColumn>
             </StyledRow>

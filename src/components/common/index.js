@@ -5,6 +5,7 @@ import StyledLink from "./StyledLink";
 import { StyledColumn, StyledRow, StyledContainer } from "./StyledLayout";
 import { FormSelect } from "./FormSelect";
 import { SearchBar } from "./SearchBar";
+import { StyledButton } from "./StyledButton";
 export {
   BackgroundImage,
   CardImage,
@@ -17,4 +18,5 @@ export {
   StyledContainer,
   FormSelect,
   SearchBar,
+  StyledButton,
 };
