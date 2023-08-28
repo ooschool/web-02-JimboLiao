@@ -1,3 +1,4 @@
 import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
-export { CartItem, EmptyCart };
+import CartSummary from "./CartSummary";
+export { CartItem, EmptyCart, CartSummary };

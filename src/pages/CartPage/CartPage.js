@@ -1,29 +1,44 @@
 import { styled } from "styled-components";
 import { StyledContainer } from "../../components/common";
 import { useCart } from "../../context/CartContext";
-import { CartItem, EmptyCart } from "../../components/cart";
+import { CartItem, CartSummary, EmptyCart } from "../../components/cart";
 
 const CartPage = () => {
   const { cart } = useCart();
-
-  return (
-    <main>
-      <StyledCart>
-        <StyledContainer>
-          <div className="cart__title">
-            <h2>My Shopping Cart</h2>
-          </div>
-          {cart.length === 0 ? (
-            <EmptyCart></EmptyCart>
-          ) : (
-            cart.map((item, index) => (
-              <CartItem key={index} item={item}></CartItem>
-            ))
-          )}
-        </StyledContainer>
-      </StyledCart>
-    </main>
+  const deliverPrice = 40;
+  const subtotal = cart?.reduce(
+    (accumulator, current) => (accumulator += current.price * current.amount),
+    0
   );
+  const grandTotal = subtotal + deliverPrice;
+  // empty cart
+  if (cart.length === 0)
+    return (
+      <StyledContainer>
+        <EmptyCart></EmptyCart>
+      </StyledContainer>
+    );
+  // display cart items
+  else
+    return (
+      <main>
+        <StyledCart>
+          <StyledContainer>
+            <div className="cart__title">
+              <h2>My Shopping Cart</h2>
+            </div>
+            {cart.map((item, index) => (
+              <CartItem key={index} item={item}></CartItem>
+            ))}
+            <CartSummary
+              subtotal={subtotal}
+              deliverPrice={deliverPrice}
+              grandTotal={grandTotal}
+            ></CartSummary>
+          </StyledContainer>
+        </StyledCart>
+      </main>
+    );
 };
 
 const StyledCart = styled.section`

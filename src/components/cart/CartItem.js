@@ -1,9 +1,13 @@
 import { styled } from "styled-components";
 import { ProductImage, StyledButton } from "../common";
+import { useCart } from "../../context/CartContext";
 
 const CartItem = ({ item }) => {
+  const { cart, setCart } = useCart();
   const handleDeleteItem = () => {
-    console.log("Delete item");
+    const idx = cart.findIndex((current) => item.id === current.id);
+    const newCart = cart.toSpliced(idx, 1);
+    setCart(newCart);
   };
   const total = item.price * item.amount;
   return (
@@ -21,7 +25,7 @@ const CartItem = ({ item }) => {
       <div className="item-summary">
         <div className="item-delete"></div>
         <StyledButton type="button" onClick={handleDeleteItem}>
-          Delete
+          Remove
         </StyledButton>
         <div className="item-total">
           Total :<br /> NT$ {total}

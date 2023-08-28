@@ -28,7 +28,6 @@ const ProductDetailPage = () => {
       newCart[cartIndex].amount = amount;
       setCart(newCart);
     }
-    console.log(cart);
   };
 
   /// product not found
