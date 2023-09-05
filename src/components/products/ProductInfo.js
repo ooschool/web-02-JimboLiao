@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { FormSelect } from "../common";
 
-const ProductInfo = ({ product, handleAddToCart, setAmount }) => {
+const ProductInfo = ({ product, onAddToCart, onAmountChange }) => {
   function createAmountOptions(product) {
     let options = [];
     for (let i = 1; i <= product.reserve; i++) {
@@ -11,7 +11,7 @@ const ProductInfo = ({ product, handleAddToCart, setAmount }) => {
   }
 
   function handleSelectAmount(event) {
-    setAmount(event.target.value);
+    onAmountChange(event.target.value);
   }
 
   return (
@@ -32,7 +32,7 @@ const ProductInfo = ({ product, handleAddToCart, setAmount }) => {
           />
         </div>
 
-        <StyledButton $primary onClick={handleAddToCart} type="button">
+        <StyledButton $primary onClick={onAddToCart} type="button">
           Add to Cart
         </StyledButton>
       </div>

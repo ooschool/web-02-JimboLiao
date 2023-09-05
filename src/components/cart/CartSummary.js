@@ -1,10 +1,10 @@
 import { styled } from "styled-components";
 
-const CartSummary = ({ subtotal, deliverPrice, grandTotal }) => {
+const CartSummary = ({ subTotal, deliverPrice, grandTotal }) => {
   return (
     <CartSummaryContainer>
       <div>
-        <p>Subtotal : NT$ {subtotal}</p>
+        <p>Subtotal : NT$ {subTotal}</p>
         <p>Delivery : NT$ {deliverPrice}</p>
         <p className="grandTotal">Grand Total : NT$ {grandTotal}</p>
       </div>

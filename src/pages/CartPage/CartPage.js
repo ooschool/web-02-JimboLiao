@@ -4,13 +4,7 @@ import { useCart } from "../../context/CartContext";
 import { CartItem, CartSummary, EmptyCart } from "../../components/cart";
 
 const CartPage = () => {
-  const { cart } = useCart();
-  const deliverPrice = 40;
-  const subtotal = cart?.reduce(
-    (accumulator, current) => (accumulator += current.price * current.amount),
-    0
-  );
-  const grandTotal = subtotal + deliverPrice;
+  const { cart, deliverPrice, subTotal, grandTotal } = useCart();
   // empty cart
   if (cart.length === 0)
     return (
@@ -31,7 +25,7 @@ const CartPage = () => {
               <CartItem key={index} item={item}></CartItem>
             ))}
             <CartSummary
-              subtotal={subtotal}
+              subTotal={subTotal}
               deliverPrice={deliverPrice}
               grandTotal={grandTotal}
             ></CartSummary>

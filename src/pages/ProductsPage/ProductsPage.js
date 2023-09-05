@@ -2,11 +2,16 @@ import { StyledContainer } from "../../components/common";
 import { styled } from "styled-components";
 import { ProductList, ProductForm } from "../../components/products";
 import { products, brandNames, productCategory } from "../../data/products";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const ProductsPage = () => {
   const [productList, setProductList] = useState(products);
   const [brandOptions] = useState(brandNames);
   const [categoryOptions] = useState(productCategory);
+
+  // window scroll to top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   //@todo form select brand
   const handleSelectBrand = (event) => {

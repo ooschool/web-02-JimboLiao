@@ -13,9 +13,16 @@ export const CartProvider = ({ children }) => {
 };
 
 export const useCart = () => {
-  const context = useContext(CartContext);
-  if (context === undefined) {
+  const { cart, setCart } = useContext(CartContext);
+  if (cart === undefined) {
     throw new Error("useCart must be used within a CartProvider");
   }
-  return context;
+  const deliverPrice = 40;
+  const subTotal = cart?.reduce(
+    (accumulator, current) => (accumulator += current.price * current.amount),
+    0
+  );
+  const grandTotal = subTotal + deliverPrice;
+
+  return { cart, setCart, deliverPrice, subTotal, grandTotal };
 };
