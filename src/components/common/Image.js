@@ -80,4 +80,21 @@ const ProductImage = (props) => {
   );
 };
 
-export { BackgroundImage, CardImage, LogoImage, ProductImage };
+const HairstylistImage = (props) => {
+  return (
+    <Image
+      $backgroundImageUrl={props.$backgroundImageUrl}
+      $backgroundSize="contain"
+      $imageRatio={imgRatio}
+      {...props}
+    />
+  );
+};
+
+export {
+  BackgroundImage,
+  CardImage,
+  LogoImage,
+  ProductImage,
+  HairstylistImage,
+};

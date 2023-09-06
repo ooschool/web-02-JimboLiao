@@ -8,6 +8,8 @@ import brand1Product4Img from "./products-1-4.png";
 import brand1Product5Img from "./products-1-5.png";
 import brand2Product1Img from "./products-2-1.png";
 import brand2Product2Img from "./products-2-2.png";
+import hairstylist1Img from "./hairstylist-1.png";
+import hairstylist2Img from "./hairstylist-2.png";
 
 export {
   logo1Img,
@@ -20,4 +22,6 @@ export {
   brand1Product5Img,
   brand2Product1Img,
   brand2Product2Img,
+  hairstylist1Img,
+  hairstylist2Img,
 };

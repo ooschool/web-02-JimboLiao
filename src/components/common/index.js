@@ -1,4 +1,9 @@
-import { BackgroundImage, CardImage, ProductImage } from "./Image";
+import {
+  BackgroundImage,
+  CardImage,
+  ProductImage,
+  HairstylistImage,
+} from "./Image";
 import LogoLink from "./LogoLink";
 import NavBar from "./NavBar";
 import StyledLink from "./StyledLink";
@@ -10,6 +15,7 @@ export {
   BackgroundImage,
   CardImage,
   ProductImage,
+  HairstylistImage,
   LogoLink,
   NavBar,
   StyledLink,
