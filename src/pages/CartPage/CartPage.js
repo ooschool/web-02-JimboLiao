@@ -1,10 +1,15 @@
 import { styled } from "styled-components";
-import { StyledContainer } from "../../components/common";
+import { StyledContainer, StyledLink } from "../../components/common";
 import { useCart } from "../../context/CartContext";
 import { CartItem, CartSummary, EmptyCart } from "../../components/cart";
+import { Button, Stack } from "@mui/material";
 
 const CartPage = () => {
   const { cart, deliverPrice, subTotal, grandTotal } = useCart();
+  //@todo onclick
+  const onCheckOutClick = (event) => {
+    console.log(event.target);
+  };
   // empty cart
   if (cart.length === 0)
     return (
@@ -29,6 +34,11 @@ const CartPage = () => {
               deliverPrice={deliverPrice}
               grandTotal={grandTotal}
             ></CartSummary>
+            <Stack direction="row" justifyContent="flex-end">
+              <Button component={StyledLink} to="/payment" variant="contained">
+                Check Out
+              </Button>
+            </Stack>
           </StyledContainer>
         </StyledCart>
       </main>

@@ -17,6 +17,7 @@ const CartSummaryContainer = styled.div`
   justify-content: flex-end;
   text-align: right;
   padding-right: 10px;
+  margin-bottom: 16px;
   font-size: 20px;
   color: #3072ff;
 

@@ -10,7 +10,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { CartProvider } from "./context/CartContext";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { SignupPage } from "./pages/SignupPage";
-
+import { PaymentPage } from "./pages/PaymentPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +24,7 @@ const router = createBrowserRouter([
       { path: "cart", element: <CartPage /> },
       { path: "login", element: <LoginPage /> },
       { path: "signup", element: <SignupPage /> },
+      { path: "payment", element: <PaymentPage /> },
     ],
   },
 ]);
