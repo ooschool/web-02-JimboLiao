@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { StyledContainer } from "../../components/common";
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { StyledContainer, StyledLink } from "../../components/common";
+import { Box, Button, Link, Stack, TextField } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 
 const LoginPage = () => {
@@ -18,12 +18,13 @@ const LoginPage = () => {
   const onSignupClick = (event) => {
     console.log(event.target);
   };
+
   return (
     <main>
       <StyledContainer>
-        <StyledLoginDialog>
+        <StyledLoginBlock>
           <h2>Login</h2>
-          <StyledFromContainer>
+          <StyledFormContainer>
             <Box component="form" sx={formBoxStyle}>
               <TextField
                 required
@@ -63,20 +64,25 @@ const LoginPage = () => {
                   >
                     Login with Google
                   </Button>
-                  <Button variant="outlined" onClick={onSignupClick}>
+                  <Button
+                    variant="outlined"
+                    onClick={onSignupClick}
+                    component={StyledLink}
+                    to="/signup"
+                  >
                     Sign up
                   </Button>
                 </Stack>
               </Stack>
             </Box>
-          </StyledFromContainer>
-        </StyledLoginDialog>
+          </StyledFormContainer>
+        </StyledLoginBlock>
       </StyledContainer>
     </main>
   );
 };
 
-const StyledLoginDialog = styled.div`
+const StyledLoginBlock = styled.div`
   margin: 64px 128px;
   border: solid 2px #3072ff;
   border-radius: 20px;
@@ -88,7 +94,7 @@ const StyledLoginDialog = styled.div`
     color: #3072ff;
   }
 `;
-const StyledFromContainer = styled.div`
+const StyledFormContainer = styled.div`
   width: 50%;
   margin: 0 auto;
 `;

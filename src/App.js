@@ -9,6 +9,7 @@ import { CartPage } from "./pages/CartPage";
 import { LoginPage } from "./pages/LoginPage";
 import { CartProvider } from "./context/CartContext";
 import { createTheme, ThemeProvider } from "@mui/material";
+import { SignupPage } from "./pages/SignupPage";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: "products/:productId", element: <ProductDetailPage /> },
       { path: "cart", element: <CartPage /> },
       { path: "login", element: <LoginPage /> },
+      { path: "signup", element: <SignupPage /> },
     ],
   },
 ]);
