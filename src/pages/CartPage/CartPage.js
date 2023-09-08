@@ -26,8 +26,8 @@ const CartPage = () => {
             <div className="cart__title">
               <h2>My Shopping Cart</h2>
             </div>
-            {cart.map((item, index) => (
-              <CartItem key={index} item={item}></CartItem>
+            {cart.map((item) => (
+              <CartItem key={item.id} item={item}></CartItem>
             ))}
             <CartSummary
               subTotal={subTotal}
@@ -35,7 +35,12 @@ const CartPage = () => {
               grandTotal={grandTotal}
             ></CartSummary>
             <Stack direction="row" justifyContent="flex-end">
-              <Button component={StyledLink} to="/payment" variant="contained">
+              <Button
+                component={StyledLink}
+                to="/payment"
+                variant="contained"
+                onClick={onCheckOutClick}
+              >
                 Check Out
               </Button>
             </Stack>

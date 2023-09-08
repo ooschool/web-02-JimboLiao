@@ -1,7 +1,19 @@
 import { styled } from "styled-components";
 import { Box, Button, Stack, TextField } from "@mui/material";
-import { StyledContainer } from "../../components/common";
+import { StyledContainer, StyledLink } from "../../components/common";
+import { useCart } from "../../context/CartContext";
+import { useOrder } from "../../context/OrderContext";
 const PaymentPage = () => {
+  const { cart, setCart } = useCart();
+  const { setOrder } = useOrder();
+  const onContinueClick = () => {
+    handleOrder();
+  };
+  const handleOrder = () => {
+    // move cart items to order
+    setOrder(cart);
+    setCart([]);
+  };
   return (
     <main>
       <StyledContainer>
@@ -45,7 +57,14 @@ const PaymentPage = () => {
           width="50%"
           margin="0 auto 12px auto"
         >
-          <Button variant="contained">Continue</Button>
+          <Button
+            variant="contained"
+            component={StyledLink}
+            onClick={onContinueClick}
+            to="/order"
+          >
+            Continue
+          </Button>
         </Stack>
       </StyledContainer>
     </main>

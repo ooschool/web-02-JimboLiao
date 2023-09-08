@@ -11,6 +11,9 @@ import { CartProvider } from "./context/CartContext";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { SignupPage } from "./pages/SignupPage";
 import { PaymentPage } from "./pages/PaymentPage";
+import { OrderPage } from "./pages/OrderPage";
+import { OrderProvider } from "./context/OrderContext";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +28,7 @@ const router = createBrowserRouter([
       { path: "login", element: <LoginPage /> },
       { path: "signup", element: <SignupPage /> },
       { path: "payment", element: <PaymentPage /> },
+      { path: "order", element: <OrderPage /> },
     ],
   },
 ]);
@@ -37,11 +41,13 @@ const theme = createTheme({
 
 const App = () => {
   return (
-    <CartProvider>
-      <ThemeProvider theme={theme}>
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </CartProvider>
+    <OrderProvider>
+      <CartProvider>
+        <ThemeProvider theme={theme}>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </CartProvider>
+    </OrderProvider>
   );
 };
 
