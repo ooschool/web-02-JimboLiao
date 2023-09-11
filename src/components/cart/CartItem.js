@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { ProductImage, StyledButton } from "../common";
 import { useCart } from "../../context/CartContext";
+import { Button } from "@mui/material";
 
 const CartItem = ({ item }) => {
   const { cart, setCart } = useCart();
@@ -24,9 +25,13 @@ const CartItem = ({ item }) => {
       </div>
       <div className="item-summary">
         <div className="item-delete"></div>
-        <StyledButton type="button" onClick={handleDeleteItem}>
+        <Button
+          variant="outlined"
+          component={StyledButton}
+          onClick={handleDeleteItem}
+        >
           Remove
-        </StyledButton>
+        </Button>
         <div className="item-total">
           Total :<br /> NT$ {total}
         </div>

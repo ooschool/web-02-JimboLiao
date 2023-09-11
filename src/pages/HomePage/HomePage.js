@@ -10,6 +10,7 @@ import {
 } from "../../components/common";
 import { brands, brand1Products, brand2Products } from "../../data/products";
 import { ProductSummary } from "../../components/products";
+import { Button } from "@mui/material";
 const allBrandProducts = [brand1Products, brand2Products];
 
 const HomePage = () => {
@@ -39,9 +40,13 @@ const HomePage = () => {
                   cxoolltc jllltc jll go cdoeedgo cdoeed
                 </p>
                 <div>
-                  <StyledLink $primary to={"/about"}>
+                  <Button
+                    variant="contained"
+                    component={StyledLink}
+                    to="/about"
+                  >
                     More
-                  </StyledLink>
+                  </Button>
                 </div>
               </div>
             </StyledColumn>
@@ -61,9 +66,9 @@ const HomePage = () => {
           <ProductSummary brands={brands} allBrandProducts={allBrandProducts} />
           <footer className="products-summary__footer">
             <p>Find the best product for you!</p>
-            <StyledLink $primary to={"/products"}>
+            <Button variant="contained" component={StyledLink} to="/products">
               Search
-            </StyledLink>
+            </Button>
           </footer>
         </StyledContainer>
       </StyledProductSummary>

@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
 import { StyledLink } from "../common";
+import { Button } from "@mui/material";
 const EmptyCart = () => {
   return (
     <>
       <StyledEmptyCart>Your cart is empty.</StyledEmptyCart>
-      <StyledLink $primary to="/products">
+      <Button variant="contained" component={StyledLink} to="/products">
         Go to market
-      </StyledLink>
+      </Button>
     </>
   );
 };

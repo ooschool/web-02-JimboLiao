@@ -11,6 +11,7 @@ import { styled } from "styled-components";
 import { ProductInfo, ProductIntro } from "../../components/products";
 import { useCart } from "../../context/CartContext";
 import { useState, useEffect } from "react";
+import { Button } from "@mui/material";
 const ProductDetailPage = () => {
   // window scroll to top
   useEffect(() => {
@@ -40,9 +41,9 @@ const ProductDetailPage = () => {
       <StyledContainer>
         <p>product not found... </p>
         <br />
-        <StyledLink $primary to="/">
+        <Button variant="contained" component={StyledLink} to="/">
           Home
-        </StyledLink>
+        </Button>
       </StyledContainer>
     );
   /// render the product detail

@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { FormSelect } from "../common";
+import { Button } from "@mui/material";
 
 const ProductInfo = ({ product, onAddToCart, onAmountChange }) => {
   function createAmountOptions(product) {
@@ -32,9 +33,13 @@ const ProductInfo = ({ product, onAddToCart, onAmountChange }) => {
           />
         </div>
 
-        <StyledButton $primary onClick={onAddToCart} type="button">
+        <Button
+          variant="contained"
+          component={StyledButton}
+          onClick={onAddToCart}
+        >
           Add to Cart
-        </StyledButton>
+        </Button>
       </div>
     </StyledProductInfo>
   );
