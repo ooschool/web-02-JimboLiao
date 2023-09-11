@@ -4,25 +4,26 @@ import reportWebVitals from "./reportWebVitals";
 import "./css/normalize.css";
 import "./css/index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./containers/Root/Root";
-import Home from "./containers/Home/Home";
-import About from "./containers/About/About";
-import ErrorPage from "./containers/ErrorPage/ErrorPage";
-import Products from "./containers/Products/Products";
-import Cart from "./containers/Cart/Cart";
-import Login from "./containers/Login/Login";
-
+import { Root } from "./components/Root";
+import { HomePage } from "./pages/HomePage";
+import { AboutPage } from "./pages/AboutPage";
+import { ErrorPage } from "./pages/ErrorPage";
+import { ProductsPage, ProductDetailPage } from "./pages/ProductsPage";
+import { CartPage } from "./pages/CartPage";
+import { LoginPage } from "./pages/LoginPage";
+import { CartProvider } from "./context/CartContext";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "", element: <Home /> },
-      { path: "about", element: <About /> },
-      { path: "products", element: <Products /> },
-      { path: "cart", element: <Cart /> },
-      { path: "login", element: <Login /> },
+      { path: "", element: <HomePage /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "products", element: <ProductsPage /> },
+      { path: "products/:productId", element: <ProductDetailPage /> },
+      { path: "cart", element: <CartPage /> },
+      { path: "login", element: <LoginPage /> },
     ],
   },
 ]);
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>
 );
 
