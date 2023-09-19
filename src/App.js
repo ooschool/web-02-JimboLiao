@@ -13,6 +13,7 @@ import { SignupPage } from "./pages/SignupPage";
 import { PaymentPage } from "./pages/PaymentPage";
 import { OrderPage } from "./pages/OrderPage";
 import { OrderProvider } from "./context/OrderContext";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
