@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { StyledContainer, StyledLink } from "../../components/common";
-import { Box, Button, Link, Stack, TextField } from "@mui/material";
+import { Box, Button, Stack, TextField } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 
 const StyledLoginBlock = styled.div`
@@ -23,16 +23,16 @@ const StyledFormContainer = styled.div`
 const LoginPage = () => {
   const formBoxStyle = { display: "flex", flexDirection: "column" };
   //@todo onClicks
-  const onLoginClick = (event) => {
+  const handleLogin = (event) => {
     console.log(event.target);
   };
-  const onForgotClick = (event) => {
+  const handleForgot = (event) => {
     console.log(event.target);
   };
-  const onGoogleLoginClick = (event) => {
+  const handleGoogleLogin = (event) => {
     console.log(event.target);
   };
-  const onSignupClick = (event) => {
+  const handleSignUp = (event) => {
     console.log(event.target);
   };
 
@@ -66,10 +66,10 @@ const LoginPage = () => {
                   alignItems="flex-start"
                   spacing={2}
                 >
-                  <Button variant="outlined" onClick={onForgotClick}>
+                  <Button variant="outlined" onClick={handleForgot}>
                     Forgot
                   </Button>
-                  <Button variant="contained" onClick={onLoginClick}>
+                  <Button variant="contained" onClick={handleLogin}>
                     Login
                   </Button>
                 </Stack>
@@ -77,13 +77,13 @@ const LoginPage = () => {
                   <Button
                     variant="contained"
                     startIcon={<GoogleIcon />}
-                    onClick={onGoogleLoginClick}
+                    onClick={handleGoogleLogin}
                   >
                     Login with Google
                   </Button>
                   <Button
                     variant="outlined"
-                    onClick={onSignupClick}
+                    onClick={handleSignUp}
                     component={StyledLink}
                     to="/signup"
                   >

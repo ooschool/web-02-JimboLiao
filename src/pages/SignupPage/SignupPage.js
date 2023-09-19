@@ -23,7 +23,7 @@ const StyledFormContainer = styled.div`
 const SignupPage = () => {
   const formBoxStyle = { display: "flex", flexDirection: "column" };
   //@todo onclick
-  const onSignupClick = (event) => {
+  const handleSignUp = (event) => {
     console.log(event.target);
   };
   return (
@@ -60,7 +60,7 @@ const SignupPage = () => {
               alignItems="flex-start"
               spacing={2}
             >
-              <Button variant="contained" onClick={onSignupClick}>
+              <Button variant="contained" onClick={handleSignUp}>
                 Sign Up
               </Button>
             </Stack>

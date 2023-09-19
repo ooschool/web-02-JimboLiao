@@ -18,7 +18,7 @@ const StyledCart = styled.section`
 const CartPage = () => {
   const { cart, deliverPrice, subTotal, grandTotal } = useCart();
   //@todo onclick
-  const onCheckOutClick = (event) => {
+  const handleCheckOut = (event) => {
     console.log(event.target);
   };
   // empty cart
@@ -50,7 +50,7 @@ const CartPage = () => {
                 component={StyledLink}
                 to="/payment"
                 variant="contained"
-                onClick={onCheckOutClick}
+                onClick={handleCheckOut}
               >
                 Check Out
               </Button>

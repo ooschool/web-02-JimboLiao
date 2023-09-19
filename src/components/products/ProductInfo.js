@@ -62,6 +62,10 @@ const ProductInfo = ({ product, onAddToCart, onAmountChange }) => {
     onAmountChange(event.target.value);
   }
 
+  const handleAddToCart = () => {
+    onAddToCart && onAddToCart();
+  };
+
   return (
     <StyledProductInfo>
       <h3>{product.productName}</h3>
@@ -83,7 +87,7 @@ const ProductInfo = ({ product, onAddToCart, onAmountChange }) => {
         <Button
           variant="contained"
           component={StyledButton}
-          onClick={onAddToCart}
+          onClick={handleAddToCart}
         >
           Add to Cart
         </Button>

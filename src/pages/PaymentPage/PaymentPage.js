@@ -13,9 +13,7 @@ const StyledPaymentTitle = styled.div`
 const PaymentPage = () => {
   const { cart, setCart } = useCart();
   const { setOrder } = useOrder();
-  const onContinueClick = () => {
-    handleOrder();
-  };
+
   const handleOrder = () => {
     // move cart items to order
     setOrder(cart);
@@ -67,7 +65,7 @@ const PaymentPage = () => {
           <Button
             variant="contained"
             component={StyledLink}
-            onClick={onContinueClick}
+            onClick={handleOrder}
             to="/order"
           >
             Continue
