@@ -2,18 +2,6 @@ import { styled } from "styled-components";
 
 const imgRatio = 3 / 4; // height/ width
 
-const Image = ({ $backgroundImageUrl, $backgroundSize, $imageRatio }) => {
-  return (
-    <StyledImage
-      $backgroundImageUrl={$backgroundImageUrl}
-      $backgroundSize={$backgroundSize}
-      $imageRatio={$imageRatio}
-    >
-      <div className="image"></div>
-    </StyledImage>
-  );
-};
-
 const StyledImage = styled.div`
   width: 100%;
   overflow: hidden;
@@ -35,6 +23,18 @@ const StyledImage = styled.div`
     background-image: url(${(props) => props.$backgroundImageUrl});
   }
 `;
+
+const Image = ({ $backgroundImageUrl, $backgroundSize, $imageRatio }) => {
+  return (
+    <StyledImage
+      $backgroundImageUrl={$backgroundImageUrl}
+      $backgroundSize={$backgroundSize}
+      $imageRatio={$imageRatio}
+    >
+      <div className="image"></div>
+    </StyledImage>
+  );
+};
 
 const BackgroundImage = (props) => {
   return (

@@ -4,6 +4,17 @@ import OrderList from "./OrderList";
 import OrderSummary from "./OrderSummary";
 import { useOrder } from "../../context/OrderContext";
 
+const StyledOrderContainer = styled.div`
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .order__title {
+    padding-bottom: 32px;
+    font-size: 32px;
+    text-align: center;
+  }
+`;
+
 const OrderSuccessful = () => {
   const { subTotal, deliverPrice, grandTotal } = useOrder();
   return (
@@ -24,14 +35,4 @@ const OrderSuccessful = () => {
   );
 };
 
-const StyledOrderContainer = styled.div`
-  padding-top: 64px;
-  padding-bottom: 64px;
-
-  .order__title {
-    padding-bottom: 32px;
-    font-size: 32px;
-    text-align: center;
-  }
-`;
 export default OrderSuccessful;

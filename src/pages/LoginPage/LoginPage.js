@@ -3,6 +3,23 @@ import { StyledContainer, StyledLink } from "../../components/common";
 import { Box, Button, Link, Stack, TextField } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 
+const StyledLoginBlock = styled.div`
+  margin: 64px 128px;
+  border: solid 2px #3072ff;
+  border-radius: 20px;
+
+  h2 {
+    padding: 32px 0px;
+    font-size: 54px;
+    text-align: center;
+    color: #3072ff;
+  }
+`;
+const StyledFormContainer = styled.div`
+  width: 50%;
+  margin: 0 auto;
+`;
+
 const LoginPage = () => {
   const formBoxStyle = { display: "flex", flexDirection: "column" };
   //@todo onClicks
@@ -82,20 +99,4 @@ const LoginPage = () => {
   );
 };
 
-const StyledLoginBlock = styled.div`
-  margin: 64px 128px;
-  border: solid 2px #3072ff;
-  border-radius: 20px;
-
-  h2 {
-    padding: 32px 0px;
-    font-size: 54px;
-    text-align: center;
-    color: #3072ff;
-  }
-`;
-const StyledFormContainer = styled.div`
-  width: 50%;
-  margin: 0 auto;
-`;
 export default LoginPage;

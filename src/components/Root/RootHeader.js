@@ -3,22 +3,6 @@ import NavBar from "../common/NavBar";
 import { styled } from "styled-components";
 import LogoLink from "../common/LogoLink";
 
-const RootHeader = () => {
-  return (
-    <StyledHeader>
-      <div className="logo">
-        <LogoLink $logoWidth={"32px"} />
-      </div>
-      <div className="btn-container">
-        <NavBar />
-        <div className="login-btn">
-          <Link to="/login">Login</Link>
-        </div>
-      </div>
-    </StyledHeader>
-  );
-};
-
 const StyledHeader = styled.header`
   background-color: #3072ff;
   display: flex;
@@ -44,5 +28,21 @@ const StyledHeader = styled.header`
     margin-right: 25px;
   }
 `;
+
+const RootHeader = () => {
+  return (
+    <StyledHeader>
+      <div className="logo">
+        <LogoLink $logoWidth={"32px"} />
+      </div>
+      <div className="btn-container">
+        <NavBar />
+        <div className="login-btn">
+          <Link to="/login">Login</Link>
+        </div>
+      </div>
+    </StyledHeader>
+  );
+};
 
 export default RootHeader;

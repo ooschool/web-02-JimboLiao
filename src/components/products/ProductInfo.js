@@ -2,49 +2,6 @@ import { styled } from "styled-components";
 import { FormSelect } from "../common";
 import { Button } from "@mui/material";
 
-const ProductInfo = ({ product, onAddToCart, onAmountChange }) => {
-  function createAmountOptions(product) {
-    let options = [];
-    for (let i = 1; i <= product.reserve; i++) {
-      options.push(i);
-    }
-    return options;
-  }
-
-  function handleSelectAmount(event) {
-    onAmountChange(event.target.value);
-  }
-
-  return (
-    <StyledProductInfo>
-      <h3>{product.productName}</h3>
-      <p className="product-price">NT$ {product.price}</p>
-      <p className="product-description">{product.description}</p>
-      <p className="product-reserve">{product.reserve} left</p>
-      <div>
-        <div className="product-amount">
-          <label htmlFor="amount">Amount : </label>
-          <FormSelect
-            name={"amount"}
-            id={"amount"}
-            optionText={"-"}
-            options={createAmountOptions(product)}
-            onChange={handleSelectAmount}
-          />
-        </div>
-
-        <Button
-          variant="contained"
-          component={StyledButton}
-          onClick={onAddToCart}
-        >
-          Add to Cart
-        </Button>
-      </div>
-    </StyledProductInfo>
-  );
-};
-
 const StyledProductInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -91,4 +48,48 @@ const StyledButton = styled.button`
   background-color: ${(props) => (props.$primary ? "#3072ff" : "whitesmoke")};
   color: ${(props) => (props.$primary ? "whitesmoke" : "#3072ff")};
 `;
+
+const ProductInfo = ({ product, onAddToCart, onAmountChange }) => {
+  function createAmountOptions(product) {
+    let options = [];
+    for (let i = 1; i <= product.reserve; i++) {
+      options.push(i);
+    }
+    return options;
+  }
+
+  function handleSelectAmount(event) {
+    onAmountChange(event.target.value);
+  }
+
+  return (
+    <StyledProductInfo>
+      <h3>{product.productName}</h3>
+      <p className="product-price">NT$ {product.price}</p>
+      <p className="product-description">{product.description}</p>
+      <p className="product-reserve">{product.reserve} left</p>
+      <div>
+        <div className="product-amount">
+          <label htmlFor="amount">Amount : </label>
+          <FormSelect
+            name={"amount"}
+            id={"amount"}
+            optionText={"-"}
+            options={createAmountOptions(product)}
+            onChange={handleSelectAmount}
+          />
+        </div>
+
+        <Button
+          variant="contained"
+          component={StyledButton}
+          onClick={onAddToCart}
+        >
+          Add to Cart
+        </Button>
+      </div>
+    </StyledProductInfo>
+  );
+};
+
 export default ProductInfo;

@@ -13,69 +13,6 @@ import { ProductSummary } from "../../components/products";
 import { Button } from "@mui/material";
 const allBrandProducts = [brand1Products, brand2Products];
 
-const HomePage = () => {
-  return (
-    <main>
-      {/* jumbotron */}
-      <StyledJumbotron>
-        <div className="jumbotron__mask"></div>
-        <div className="jumbotron__title">
-          <LogoLink $logoWidth={"128px"} />
-        </div>
-      </StyledJumbotron>
-
-      {/* about-summary */}
-      <StyledAboutSummary>
-        <StyledContainer>
-          <div className="about-summary__title">
-            <h2>About</h2>
-          </div>
-          <StyledRow>
-            <StyledColumn $num={6}>
-              <div className="about-summary__content">
-                <h3>Since 1999</h3>
-                <p>
-                  feeltc jllee jede scoot koop jssgo cdoee cxool koop jssg
-                  cdoeede scode sco joo cxoolo op jssgo cdoeede sco jdie kdke
-                  cxoolltc jllltc jll go cdoeedgo cdoeed
-                </p>
-                <div>
-                  <Button
-                    variant="contained"
-                    component={StyledLink}
-                    to="/about"
-                  >
-                    More
-                  </Button>
-                </div>
-              </div>
-            </StyledColumn>
-            <StyledColumn $num={6}>
-              <BackgroundImage $backgroundImageUrl={about1Img} />
-            </StyledColumn>
-          </StyledRow>
-        </StyledContainer>
-      </StyledAboutSummary>
-
-      {/* products-summary */}
-      <StyledProductSummary>
-        <StyledContainer>
-          <div className="products-summary__title">
-            <h2>Products</h2>
-          </div>
-          <ProductSummary brands={brands} allBrandProducts={allBrandProducts} />
-          <footer className="products-summary__footer">
-            <p>Find the best product for you!</p>
-            <Button variant="contained" component={StyledLink} to="/products">
-              Search
-            </Button>
-          </footer>
-        </StyledContainer>
-      </StyledProductSummary>
-    </main>
-  );
-};
-
 const StyledJumbotron = styled.section`
   padding: 240px 0px;
 
@@ -149,4 +86,68 @@ const StyledProductSummary = styled.section`
     }
   }
 `;
+
+const HomePage = () => {
+  return (
+    <main>
+      {/* jumbotron */}
+      <StyledJumbotron>
+        <div className="jumbotron__mask"></div>
+        <div className="jumbotron__title">
+          <LogoLink $logoWidth={"128px"} />
+        </div>
+      </StyledJumbotron>
+
+      {/* about-summary */}
+      <StyledAboutSummary>
+        <StyledContainer>
+          <div className="about-summary__title">
+            <h2>About</h2>
+          </div>
+          <StyledRow>
+            <StyledColumn $num={6}>
+              <div className="about-summary__content">
+                <h3>Since 1999</h3>
+                <p>
+                  feeltc jllee jede scoot koop jssgo cdoee cxool koop jssg
+                  cdoeede scode sco joo cxoolo op jssgo cdoeede sco jdie kdke
+                  cxoolltc jllltc jll go cdoeedgo cdoeed
+                </p>
+                <div>
+                  <Button
+                    variant="contained"
+                    component={StyledLink}
+                    to="/about"
+                  >
+                    More
+                  </Button>
+                </div>
+              </div>
+            </StyledColumn>
+            <StyledColumn $num={6}>
+              <BackgroundImage $backgroundImageUrl={about1Img} />
+            </StyledColumn>
+          </StyledRow>
+        </StyledContainer>
+      </StyledAboutSummary>
+
+      {/* products-summary */}
+      <StyledProductSummary>
+        <StyledContainer>
+          <div className="products-summary__title">
+            <h2>Products</h2>
+          </div>
+          <ProductSummary brands={brands} allBrandProducts={allBrandProducts} />
+          <footer className="products-summary__footer">
+            <p>Find the best product for you!</p>
+            <Button variant="contained" component={StyledLink} to="/products">
+              Search
+            </Button>
+          </footer>
+        </StyledContainer>
+      </StyledProductSummary>
+    </main>
+  );
+};
+
 export default HomePage;

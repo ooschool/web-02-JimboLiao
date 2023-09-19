@@ -1,30 +1,7 @@
 import { styled } from "styled-components";
 import { ProductImage } from "../common";
 
-const OrderItem = ({ item }) => {
-  const total = item.price * item.amount;
-  return (
-    <ItemContainer>
-      <div className="img-container">
-        <ProductImage $backgroundImageUrl={item.imgUrl} />
-      </div>
-      <div className="item-info">
-        <StyledItemInfo>
-          <h3>{item.productName}</h3>
-          <p className="item-price">NT$ {item.price}</p>
-          <p className="item-amount">Amount : {item.amount}</p>
-        </StyledItemInfo>
-      </div>
-      <div className="item-summary">
-        <div className="item-total">
-          Total :<br /> NT$ {total}
-        </div>
-      </div>
-    </ItemContainer>
-  );
-};
-
-const ItemContainer = styled.div`
+const StyledItemContainer = styled.div`
   border: 2px solid #ccc;
   border-radius: 16px;
   display: flex;
@@ -63,5 +40,28 @@ const StyledItemInfo = styled.div`
     font-size: 24px;
   }
 `;
+
+const OrderItem = ({ item }) => {
+  const total = item.price * item.amount;
+  return (
+    <StyledItemContainer>
+      <div className="img-container">
+        <ProductImage $backgroundImageUrl={item.imgUrl} />
+      </div>
+      <div className="item-info">
+        <StyledItemInfo>
+          <h3>{item.productName}</h3>
+          <p className="item-price">NT$ {item.price}</p>
+          <p className="item-amount">Amount : {item.amount}</p>
+        </StyledItemInfo>
+      </div>
+      <div className="item-summary">
+        <div className="item-total">
+          Total :<br /> NT$ {total}
+        </div>
+      </div>
+    </StyledItemContainer>
+  );
+};
 
 export default OrderItem;

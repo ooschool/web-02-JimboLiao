@@ -3,6 +3,13 @@ import { Box, Button, Stack, TextField } from "@mui/material";
 import { StyledContainer, StyledLink } from "../../components/common";
 import { useCart } from "../../context/CartContext";
 import { useOrder } from "../../context/OrderContext";
+
+const StyledPaymentTitle = styled.div`
+  padding: 32px 0px;
+  font-size: 54px;
+  text-align: center;
+`;
+
 const PaymentPage = () => {
   const { cart, setCart } = useCart();
   const { setOrder } = useOrder();
@@ -70,11 +77,5 @@ const PaymentPage = () => {
     </main>
   );
 };
-
-const StyledPaymentTitle = styled.div`
-  padding: 32px 0px;
-  font-size: 54px;
-  text-align: center;
-`;
 
 export default PaymentPage;

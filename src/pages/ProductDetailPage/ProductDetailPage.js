@@ -12,6 +12,18 @@ import { ProductInfo, ProductIntro } from "../../components/products";
 import { useCart } from "../../context/CartContext";
 import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
+
+const StyledProductDetail = styled.section`
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .product-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 const ProductDetailPage = () => {
   // window scroll to top
   useEffect(() => {
@@ -81,16 +93,5 @@ const ProductDetailPage = () => {
     );
   }
 };
-
-const StyledProductDetail = styled.section`
-  padding-top: 64px;
-  padding-bottom: 64px;
-
-  .product-info {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-`;
 
 export default ProductDetailPage;

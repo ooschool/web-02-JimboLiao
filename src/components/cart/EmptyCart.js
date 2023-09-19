@@ -1,6 +1,13 @@
 import { styled } from "styled-components";
 import { StyledLink } from "../common";
 import { Button } from "@mui/material";
+
+const StyledEmptyCart = styled.div`
+  font-size: 1.5em;
+  text-align: center;
+  padding: 2em;
+`;
+
 const EmptyCart = () => {
   return (
     <>
@@ -11,11 +18,5 @@ const EmptyCart = () => {
     </>
   );
 };
-
-const StyledEmptyCart = styled.div`
-  font-size: 1.5em;
-  text-align: center;
-  padding: 2em;
-`;
 
 export default EmptyCart;

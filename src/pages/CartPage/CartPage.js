@@ -4,6 +4,17 @@ import { useCart } from "../../context/CartContext";
 import { CartItem, CartSummary, EmptyCart } from "../../components/cart";
 import { Button, Stack } from "@mui/material";
 
+const StyledCart = styled.section`
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .cart__title {
+    padding-bottom: 32px;
+    font-size: 32px;
+    text-align: center;
+  }
+`;
+
 const CartPage = () => {
   const { cart, deliverPrice, subTotal, grandTotal } = useCart();
   //@todo onclick
@@ -49,16 +60,5 @@ const CartPage = () => {
       </main>
     );
 };
-
-const StyledCart = styled.section`
-  padding-top: 64px;
-  padding-bottom: 64px;
-
-  .cart__title {
-    padding-bottom: 32px;
-    font-size: 32px;
-    text-align: center;
-  }
-`;
 
 export default CartPage;
