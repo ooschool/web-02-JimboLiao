@@ -1,15 +1,7 @@
 import { styled } from "styled-components";
-import { ProductImage, StyledButton } from "../common";
-import { useCart } from "../../context/CartContext";
-import { Button } from "@mui/material";
+import { ProductImage } from "../common";
 
-const CartItem = ({ item }) => {
-  const { cart, setCart } = useCart();
-  const handleDeleteItem = () => {
-    const idx = cart.findIndex((current) => item.id === current.id);
-    const newCart = cart.toSpliced(idx, 1);
-    setCart(newCart);
-  };
+const OrderItem = ({ item }) => {
   const total = item.price * item.amount;
   return (
     <ItemContainer>
@@ -24,14 +16,6 @@ const CartItem = ({ item }) => {
         </StyledItemInfo>
       </div>
       <div className="item-summary">
-        <div className="item-delete"></div>
-        <Button
-          variant="outlined"
-          component={StyledButton}
-          onClick={handleDeleteItem}
-        >
-          Remove
-        </Button>
         <div className="item-total">
           Total :<br /> NT$ {total}
         </div>
@@ -59,9 +43,6 @@ const ItemContainer = styled.div`
     width: 35%;
     text-align: right;
     padding-right: 64px;
-    .item-delete {
-      max-width: 32px;
-    }
     .item-total {
       padding: 48px 0px 0px 0px;
       font-size: 24px;
@@ -80,7 +61,7 @@ const StyledItemInfo = styled.div`
   }
   .item-amount {
     font-size: 24px;
-    /* padding-bottom: 32px; */
   }
 `;
-export default CartItem;
+
+export default OrderItem;

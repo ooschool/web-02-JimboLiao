@@ -1,16 +1,15 @@
 import { styled } from "styled-components";
-import { StyledContainer } from "../../components/common";
+import { StyledContainer, StyledLink } from "../../components/common";
 import { useCart } from "../../context/CartContext";
 import { CartItem, CartSummary, EmptyCart } from "../../components/cart";
+import { Button, Stack } from "@mui/material";
 
 const CartPage = () => {
-  const { cart } = useCart();
-  const deliverPrice = 40;
-  const subtotal = cart?.reduce(
-    (accumulator, current) => (accumulator += current.price * current.amount),
-    0
-  );
-  const grandTotal = subtotal + deliverPrice;
+  const { cart, deliverPrice, subTotal, grandTotal } = useCart();
+  //@todo onclick
+  const onCheckOutClick = (event) => {
+    console.log(event.target);
+  };
   // empty cart
   if (cart.length === 0)
     return (
@@ -27,14 +26,24 @@ const CartPage = () => {
             <div className="cart__title">
               <h2>My Shopping Cart</h2>
             </div>
-            {cart.map((item, index) => (
-              <CartItem key={index} item={item}></CartItem>
+            {cart.map((item) => (
+              <CartItem key={item.id} item={item}></CartItem>
             ))}
             <CartSummary
-              subtotal={subtotal}
+              subTotal={subTotal}
               deliverPrice={deliverPrice}
               grandTotal={grandTotal}
             ></CartSummary>
+            <Stack direction="row" justifyContent="flex-end">
+              <Button
+                component={StyledLink}
+                to="/payment"
+                variant="contained"
+                onClick={onCheckOutClick}
+              >
+                Check Out
+              </Button>
+            </Stack>
           </StyledContainer>
         </StyledCart>
       </main>

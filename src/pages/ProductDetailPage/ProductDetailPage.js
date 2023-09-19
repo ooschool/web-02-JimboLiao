@@ -10,13 +10,18 @@ import {
 import { styled } from "styled-components";
 import { ProductInfo, ProductIntro } from "../../components/products";
 import { useCart } from "../../context/CartContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Button } from "@mui/material";
 const ProductDetailPage = () => {
+  // window scroll to top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { productId } = useParams();
   const product = getProductById(productId);
   const { cart, setCart } = useCart();
   const [amount, setAmount] = useState(0);
-  const handleAddToCart = () => {
+  const onAddToCart = () => {
     // Check if the product is already in the cart
     const cartIndex = cart.findIndex((item) => item.id === product.id);
     // Not in the cart
@@ -36,9 +41,9 @@ const ProductDetailPage = () => {
       <StyledContainer>
         <p>product not found... </p>
         <br />
-        <StyledLink $primary to="/">
+        <Button variant="contained" component={StyledLink} to="/">
           Home
-        </StyledLink>
+        </Button>
       </StyledContainer>
     );
   /// render the product detail
@@ -56,8 +61,8 @@ const ProductDetailPage = () => {
               <StyledColumn $num={6}>
                 <ProductInfo
                   product={product}
-                  handleAddToCart={handleAddToCart}
-                  setAmount={setAmount}
+                  onAddToCart={onAddToCart}
+                  onAmountChange={setAmount}
                 />
               </StyledColumn>
             </StyledRow>

@@ -1,18 +1,18 @@
 import { styled } from "styled-components";
 
-const CartSummary = ({ subTotal, deliverPrice, grandTotal }) => {
+const OrderSummary = ({ subTotal, deliverPrice, grandTotal }) => {
   return (
-    <CartSummaryContainer>
+    <OrderSummaryContainer>
       <div>
         <p>Subtotal : NT$ {subTotal}</p>
         <p>Delivery : NT$ {deliverPrice}</p>
         <p className="grandTotal">Grand Total : NT$ {grandTotal}</p>
       </div>
-    </CartSummaryContainer>
+    </OrderSummaryContainer>
   );
 };
 
-const CartSummaryContainer = styled.div`
+const OrderSummaryContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   text-align: right;
@@ -26,4 +26,4 @@ const CartSummaryContainer = styled.div`
     padding-top: 10px;
   }
 `;
-export default CartSummary;
+export default OrderSummary;

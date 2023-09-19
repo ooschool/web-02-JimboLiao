@@ -7,9 +7,9 @@ const ProductCard = (props) => {
       <Link to={`/products/${props.productId}`}>
         <CardImage $backgroundImageUrl={props.$backgroundImageUrl}></CardImage>
         <div className="card-body">
-          <h3 className="card-title">{props.cardTitle}</h3>
+          <p className="card-title">{props.cardTitle}</p>
           <p className="card-price">NT${props.price}</p>
-          <p className="card-des">{props.des}</p>
+          {/* <p className="card-des">{props.des}</p> */}
         </div>
       </Link>
     </StyledCard>
@@ -17,6 +17,7 @@ const ProductCard = (props) => {
 };
 
 const StyledCard = styled.div`
+  text-align: left;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   a {
@@ -33,6 +34,7 @@ const StyledCard = styled.div`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-weight: bold;
     }
     .card-price {
       padding-bottom: 4px;
