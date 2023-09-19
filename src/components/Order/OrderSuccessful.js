@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import { StyledContainer } from "../common";
 import OrderList from "./OrderList";
 import OrderSummary from "./OrderSummary";
-import { useOrder } from "../../context/OrderContext";
+import { useCart } from "../../context/CartContext";
 
 const StyledOrderContainer = styled.div`
   padding-top: 64px;
@@ -16,7 +16,7 @@ const StyledOrderContainer = styled.div`
 `;
 
 const OrderSuccessful = () => {
-  const { subTotal, deliverPrice, grandTotal } = useOrder();
+  const { orderSubTotal, deliverPrice, orderGrandTotal } = useCart();
   return (
     <StyledContainer>
       <StyledOrderContainer>
@@ -27,9 +27,9 @@ const OrderSuccessful = () => {
       </StyledOrderContainer>
       <OrderList />
       <OrderSummary
-        subTotal={subTotal}
+        subTotal={orderSubTotal}
         deliverPrice={deliverPrice}
-        grandTotal={grandTotal}
+        grandTotal={orderGrandTotal}
       />
     </StyledContainer>
   );

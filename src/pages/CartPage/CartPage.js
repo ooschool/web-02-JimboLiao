@@ -37,9 +37,10 @@ const CartPage = () => {
             <div className="cart__title">
               <h2>My Shopping Cart</h2>
             </div>
-            {cart.map((item) => (
-              <CartItem key={item.id} item={item}></CartItem>
-            ))}
+            {cart.map((item) => {
+              if (item.isPaid) return;
+              else return <CartItem key={item.id} item={item}></CartItem>;
+            })}
             <CartSummary
               subTotal={subTotal}
               deliverPrice={deliverPrice}

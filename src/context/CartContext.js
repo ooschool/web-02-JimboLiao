@@ -19,10 +19,25 @@ export const useCart = () => {
   }
   const deliverPrice = 40;
   const subTotal = cart?.reduce(
-    (accumulator, current) => (accumulator += current.price * current.amount),
+    (accumulator, current) =>
+      (accumulator += current.isPaid ? 0 : current.price * current.amount),
     0
   );
   const grandTotal = subTotal + deliverPrice;
+  const orderSubTotal = cart?.reduce(
+    (accumulator, current) =>
+      (accumulator += current.isPaid ? current.price * current.amount : 0),
+    0
+  );
+  const orderGrandTotal = subTotal + deliverPrice;
 
-  return { cart, setCart, deliverPrice, subTotal, grandTotal };
+  return {
+    cart,
+    setCart,
+    deliverPrice,
+    subTotal,
+    grandTotal,
+    orderGrandTotal,
+    orderSubTotal,
+  };
 };

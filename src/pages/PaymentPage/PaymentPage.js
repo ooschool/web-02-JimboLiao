@@ -2,7 +2,6 @@ import { styled } from "styled-components";
 import { Box, Button, Stack, TextField } from "@mui/material";
 import { StyledContainer, StyledLink } from "../../components/common";
 import { useCart } from "../../context/CartContext";
-import { useOrder } from "../../context/OrderContext";
 
 const StyledPaymentTitle = styled.div`
   padding: 32px 0px;
@@ -12,12 +11,13 @@ const StyledPaymentTitle = styled.div`
 
 const PaymentPage = () => {
   const { cart, setCart } = useCart();
-  const { setOrder } = useOrder();
 
   const handleOrder = () => {
-    // move cart items to order
-    setOrder(cart);
-    setCart([]);
+    const newCart = cart.map((item) => {
+      item.isPaid = true;
+      return item;
+    });
+    setCart(newCart);
   };
   return (
     <main>
