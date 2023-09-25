@@ -50,11 +50,13 @@ const StyledItemInfo = styled.div`
 const CartItem = ({ item }) => {
   const { cart, setCart } = useCart();
   const handleDeleteItem = () => {
-    const idx = cart.findIndex((current) => item.id === current.id);
-    const newCart = cart.toSpliced(idx, 1);
-    setCart(newCart);
+    const idx = cart?.findIndex((current) => item?.id === current.id);
+    if (idx != -1) {
+      const newCart = cart.toSpliced(idx, 1);
+      setCart(newCart);
+    }
   };
-  const total = item.price * item.amount;
+  const total = item?.price * item?.amount;
   return (
     <StyledItemContainer>
       <div className="img-container">

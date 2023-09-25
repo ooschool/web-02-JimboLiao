@@ -42,7 +42,7 @@ const StyledItemInfo = styled.div`
 `;
 
 const OrderItem = ({ item }) => {
-  const total = item.price * item.amount;
+  const total = item?.price * item?.amount;
   return (
     <StyledItemContainer>
       <div className="img-container">
