@@ -8,6 +8,67 @@ import {
   BackgroundImage,
 } from "../../components/common";
 import { HairstylistList } from "../../components/about";
+
+const StyledAboutStory = styled.div`
+  padding-top: 64px;
+  padding-bottom: 64px;
+  .about-story__title {
+    padding-bottom: 32px;
+    font-size: 32px;
+    text-align: center;
+  }
+  .about-story__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+      padding-bottom: 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+    p {
+      padding-bottom: 12px;
+      font-size: 16px;
+      text-align: justify;
+    }
+  }
+`;
+
+const StyledAboutHairstylists = styled.div`
+  padding-top: 64px;
+  padding-bottom: 64px;
+  .about-hairstylists__title {
+    padding-bottom: 32px;
+    font-size: 32px;
+    text-align: center;
+  }
+`;
+
+const StyledAboutContact = styled.div`
+  padding-top: 64px;
+  padding-bottom: 64px;
+  .about-contacts__title {
+    padding-bottom: 32px;
+    font-size: 32px;
+    text-align: center;
+  }
+  .about-contacts__description {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      line-height: 24px;
+    }
+  }
+`;
+const StyledIframe = styled.iframe`
+  border: 0;
+  width: 100%;
+  height: 320px;
+`;
+
 const AboutPage = () => {
   // window scroll to top
   useEffect(() => {
@@ -72,65 +133,5 @@ const AboutPage = () => {
     </main>
   );
 };
-
-const StyledAboutStory = styled.div`
-  padding-top: 64px;
-  padding-bottom: 64px;
-  .about-story__title {
-    padding-bottom: 32px;
-    font-size: 32px;
-    text-align: center;
-  }
-  .about-story__content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    h3 {
-      padding-bottom: 20px;
-      font-size: 24px;
-      text-align: center;
-    }
-    p {
-      padding-bottom: 12px;
-      font-size: 16px;
-      text-align: justify;
-    }
-  }
-`;
-
-const StyledAboutHairstylists = styled.div`
-  padding-top: 64px;
-  padding-bottom: 64px;
-  .about-hairstylists__title {
-    padding-bottom: 32px;
-    font-size: 32px;
-    text-align: center;
-  }
-`;
-
-const StyledAboutContact = styled.div`
-  padding-top: 64px;
-  padding-bottom: 64px;
-  .about-contacts__title {
-    padding-bottom: 32px;
-    font-size: 32px;
-    text-align: center;
-  }
-  .about-contacts__description {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    p {
-      line-height: 24px;
-    }
-  }
-`;
-const StyledIframe = styled.iframe`
-  border: 0;
-  width: 100%;
-  height: 320px;
-`;
 
 export default AboutPage;

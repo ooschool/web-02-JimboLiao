@@ -12,7 +12,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { SignupPage } from "./pages/SignupPage";
 import { PaymentPage } from "./pages/PaymentPage";
 import { OrderPage } from "./pages/OrderPage";
-import { OrderProvider } from "./context/OrderContext";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
@@ -41,13 +41,11 @@ const theme = createTheme({
 
 const App = () => {
   return (
-    <OrderProvider>
-      <CartProvider>
-        <ThemeProvider theme={theme}>
-          <RouterProvider router={router} />
-        </ThemeProvider>
-      </CartProvider>
-    </OrderProvider>
+    <CartProvider>
+      <ThemeProvider theme={theme}>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </CartProvider>
   );
 };
 

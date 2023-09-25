@@ -1,18 +1,7 @@
 import { styled } from "styled-components";
 import { StyledContainer } from "../common";
 
-const OrderFailed = () => {
-  return (
-    <StyledContainer>
-      <OrderFailedMessage>
-        <div className="order__title">Sorry</div>
-        <div>Something went wrong, please try again later.</div>
-      </OrderFailedMessage>
-    </StyledContainer>
-  );
-};
-
-const OrderFailedMessage = styled.section`
+const StyledFailedMessage = styled.section`
   padding-top: 64px;
   padding-bottom: 64px;
 
@@ -22,5 +11,16 @@ const OrderFailedMessage = styled.section`
     text-align: center;
   }
 `;
+
+const OrderFailed = () => {
+  return (
+    <StyledContainer>
+      <StyledFailedMessage>
+        <div className="order__title">Sorry</div>
+        <div>Something went wrong, please try again later.</div>
+      </StyledFailedMessage>
+    </StyledContainer>
+  );
+};
 
 export default OrderFailed;

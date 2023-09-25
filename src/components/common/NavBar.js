@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
+const StyledNav = styled.nav`
+  display: flex;
+  align-items: center;
+
+  > ul {
+    display: flex;
+    align-items: center;
+  }
+
+  ul > li {
+    margin-right: 25px;
+  }
+`;
+
 const NavBar = () => {
   return (
     <StyledNav>
@@ -18,19 +32,5 @@ const NavBar = () => {
     </StyledNav>
   );
 };
-
-const StyledNav = styled.nav`
-  display: flex;
-  align-items: center;
-
-  > ul {
-    display: flex;
-    align-items: center;
-  }
-
-  ul > li {
-    margin-right: 25px;
-  }
-`;
 
 export default NavBar;

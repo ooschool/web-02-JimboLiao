@@ -1,5 +1,10 @@
 import { styled } from "styled-components";
 
+const StyledSearchBar = styled.div`
+  display: inline-block;
+  margin-left: 5px;
+`;
+
 const SearchBarModal = ({
   id = "search",
   name = "search",
@@ -30,8 +35,4 @@ const SearchBar = ({ id, name, placeholder, onChange }) => {
   );
 };
 
-const StyledSearchBar = styled.div`
-  display: inline-block;
-  margin-left: 5px;
-`;
 export { SearchBar };

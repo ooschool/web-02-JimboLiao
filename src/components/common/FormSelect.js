@@ -1,4 +1,9 @@
 import { styled } from "styled-components";
+
+const StyledSelect = styled.div`
+  display: inline-block;
+`;
+
 const SelectModal = ({
   name,
   id,
@@ -19,10 +24,6 @@ const SelectModal = ({
     </select>
   );
 };
-
-const StyledSelect = styled.div`
-  display: inline-block;
-`;
 
 const FormSelect = (props) => {
   return (

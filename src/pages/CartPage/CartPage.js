@@ -4,10 +4,21 @@ import { useCart } from "../../context/CartContext";
 import { CartItem, CartSummary, EmptyCart } from "../../components/cart";
 import { Button, Stack } from "@mui/material";
 
+const StyledCart = styled.section`
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .cart__title {
+    padding-bottom: 32px;
+    font-size: 32px;
+    text-align: center;
+  }
+`;
+
 const CartPage = () => {
   const { cart, deliverPrice, subTotal, grandTotal } = useCart();
   //@todo onclick
-  const onCheckOutClick = (event) => {
+  const handleCheckOut = (event) => {
     console.log(event.target);
   };
   // empty cart
@@ -26,9 +37,10 @@ const CartPage = () => {
             <div className="cart__title">
               <h2>My Shopping Cart</h2>
             </div>
-            {cart.map((item) => (
-              <CartItem key={item.id} item={item}></CartItem>
-            ))}
+            {cart.map((item) => {
+              if (item.isPaid) return;
+              else return <CartItem key={item.id} item={item}></CartItem>;
+            })}
             <CartSummary
               subTotal={subTotal}
               deliverPrice={deliverPrice}
@@ -39,7 +51,7 @@ const CartPage = () => {
                 component={StyledLink}
                 to="/payment"
                 variant="contained"
-                onClick={onCheckOutClick}
+                onClick={handleCheckOut}
               >
                 Check Out
               </Button>
@@ -49,16 +61,5 @@ const CartPage = () => {
       </main>
     );
 };
-
-const StyledCart = styled.section`
-  padding-top: 64px;
-  padding-bottom: 64px;
-
-  .cart__title {
-    padding-bottom: 32px;
-    font-size: 32px;
-    text-align: center;
-  }
-`;
 
 export default CartPage;

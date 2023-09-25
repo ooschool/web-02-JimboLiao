@@ -1,13 +1,15 @@
-import { useOrder } from "../../context/OrderContext";
+import { useCart } from "../../context/CartContext";
 import OrderItem from "./OrderItem";
 
 const OrderList = () => {
-  const { order } = useOrder();
+  const { cart } = useCart();
   return (
     <div>
-      {order.map((item) => (
-        <OrderItem item={item} key={item.id} />
-      ))}
+      {cart.map((item) => {
+        if (item.isPaid) {
+          return <OrderItem item={item} key={item.id} />;
+        } else return;
+      })}
     </div>
   );
 };

@@ -3,18 +3,18 @@ import { LogoImage } from "./Image";
 import { logo1Img } from "../../images";
 import { styled } from "styled-components";
 
+const StyledBrand = styled.div`
+  width: ${(props) => props.$logoWidth};
+`;
+
 const LogoLink = ({ $logoWidth }) => {
   return (
     <Link to="/">
-      <Brand $logoWidth={$logoWidth}>
+      <StyledBrand $logoWidth={$logoWidth}>
         <LogoImage $backgroundImageUrl={logo1Img}></LogoImage>
-      </Brand>
+      </StyledBrand>
     </Link>
   );
 };
-
-const Brand = styled.div`
-  width: ${(props) => props.$logoWidth};
-`;
 
 export default LogoLink;

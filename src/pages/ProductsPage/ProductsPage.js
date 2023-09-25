@@ -3,6 +3,18 @@ import { styled } from "styled-components";
 import { ProductList, ProductForm } from "../../components/products";
 import { products, brandNames, productCategory } from "../../data/products";
 import { useState, useEffect } from "react";
+
+const StyledProduct = styled.section`
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .products__title {
+    padding-bottom: 32px;
+    font-size: 32px;
+    text-align: center;
+  }
+`;
+
 const ProductsPage = () => {
   const [productList, setProductList] = useState(products);
   const [brandOptions] = useState(brandNames);
@@ -46,16 +58,5 @@ const ProductsPage = () => {
     </main>
   );
 };
-
-const StyledProduct = styled.section`
-  padding-top: 64px;
-  padding-bottom: 64px;
-
-  .products__title {
-    padding-bottom: 32px;
-    font-size: 32px;
-    text-align: center;
-  }
-`;
 
 export default ProductsPage;
