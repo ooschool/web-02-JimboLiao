@@ -5,7 +5,7 @@ const GUTTERWIDTHPX = 32;
 
 const StyledContainer = styled.div`
   max-width: 1140px;
-  width: 100%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   padding-left: ${GUTTERWIDTHPX / 2}px;

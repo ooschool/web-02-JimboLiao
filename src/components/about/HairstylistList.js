@@ -1,6 +1,7 @@
 import { StyledRow, StyledColumn, HairstylistImage } from "../common";
 import { hairstylists } from "../../data/hairstylists";
 import { styled } from "styled-components";
+import { Grid } from "@mui/material";
 
 const StyledImgContainer = styled.div`
   padding-bottom: 8px;
@@ -11,18 +12,18 @@ const StyledDescriptionContainer = styled.div`
 
 const HairstylistList = () => {
   return (
-    <StyledRow>
+    <Grid container columnSpacing={2} rowSpacing={2}>
       {hairstylists.map((hairstylist) => (
-        <StyledColumn $num={6}>
+        <Grid item xs={12} md={6}>
           <StyledImgContainer>
             <HairstylistImage $backgroundImageUrl={hairstylist.imgUrl} />
           </StyledImgContainer>
           <StyledDescriptionContainer>
             <p>{hairstylist.description}</p>
           </StyledDescriptionContainer>
-        </StyledColumn>
+        </Grid>
       ))}
-    </StyledRow>
+    </Grid>
   );
 };
 
