@@ -15,19 +15,16 @@ const StyledNav = styled.nav`
   }
 `;
 
-const NavBar = () => {
+const NavBar = ({ pages }) => {
   return (
     <StyledNav>
       <ul>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/products">Products</Link>
-        </li>
-        <li>
-          <Link to="/cart">Cart</Link>
-        </li>
+        {pages &&
+          pages.map((page, index) => (
+            <li key={index}>
+              <Link to={`/${page}`}>{page.toUpperCase()}</Link>
+            </li>
+          ))}
       </ul>
     </StyledNav>
   );

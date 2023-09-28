@@ -11,6 +11,7 @@ import { StyledColumn, StyledRow, StyledContainer } from "./StyledLayout";
 import { FormSelect } from "./FormSelect";
 import { SearchBar } from "./SearchBar";
 import { StyledButton } from "./StyledButton";
+import MenuDrawer from "./MenuDrawer";
 export {
   BackgroundImage,
   CardImage,
@@ -25,4 +26,5 @@ export {
   FormSelect,
   SearchBar,
   StyledButton,
+  MenuDrawer,
 };

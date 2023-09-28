@@ -21,9 +21,11 @@ const StyledFooter = styled.footer`
 `;
 
 const RootFooter = () => {
+  const pages = ["about", "products", "cart"];
+
   return (
     <StyledFooter>
-      <NavBar />
+      <NavBar pages={pages} />
       <div className="contact-btn">
         <div className="facebook-link">
           <a href="https://www.facebook.com" target="_blank">
