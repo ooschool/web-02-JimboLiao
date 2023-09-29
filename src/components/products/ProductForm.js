@@ -1,4 +1,5 @@
-import { FormSelect, StyledRow, StyledColumn, SearchBar } from "../common";
+import { Grid } from "@mui/material";
+import { FormSelect, SearchBar } from "../common";
 
 const ProductForm = ({
   handleSelectBrand,
@@ -9,8 +10,8 @@ const ProductForm = ({
 }) => {
   return (
     <form>
-      <StyledRow>
-        <StyledColumn $num={4}>
+      <Grid container columnSpacing={2} rowSpacing={2}>
+        <Grid item xs={12} md={4}>
           <label htmlFor="brand">Brand : </label>
           <FormSelect
             name="brand"
@@ -18,8 +19,8 @@ const ProductForm = ({
             options={brandOptions}
             onChange={handleSelectBrand}
           />
-        </StyledColumn>
-        <StyledColumn $num={4}>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <label htmlFor="category">Category : </label>
           <FormSelect
             name="category"
@@ -27,12 +28,12 @@ const ProductForm = ({
             options={categoryOptions}
             onChange={handleSelectCategory}
           />
-        </StyledColumn>
-        <StyledColumn $num={4}>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <label htmlFor="search">Search : </label>
           <SearchBar id="search" name="search" onChange={handleSearch} />
-        </StyledColumn>
-      </StyledRow>
+        </Grid>
+      </Grid>
     </form>
   );
 };
