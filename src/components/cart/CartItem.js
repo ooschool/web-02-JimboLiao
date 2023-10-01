@@ -51,7 +51,7 @@ const CartItem = ({ item }) => {
   const { cart, setCart } = useCart();
   const handleDeleteItem = () => {
     const idx = cart?.findIndex((current) => item?.id === current.id);
-    if (idx != -1) {
+    if (idx !== -1) {
       const newCart = cart.toSpliced(idx, 1);
       setCart(newCart);
     }

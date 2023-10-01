@@ -8,7 +8,7 @@ const OrderList = () => {
       {cart.map((item) => {
         if (item.isPaid) {
           return <OrderItem item={item} key={item.id} />;
-        } else return;
+        } else return <></>;
       })}
     </div>
   );

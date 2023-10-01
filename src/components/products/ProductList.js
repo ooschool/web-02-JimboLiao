@@ -11,7 +11,7 @@ const ProductList = ({ products }) => {
       <StyledCardContainer>
         <Grid container columnSpacing={2} rowSpacing={2}>
           {products.map((product) => (
-            <Grid item key={product.id} xs={12} md={4}>
+            <Grid item key={product.id} xs={12} sm={6} md={4}>
               <ProductCard
                 productId={product.id}
                 $backgroundImageUrl={product.imgUrl}

@@ -39,7 +39,7 @@ const ProductsPage = () => {
       });
   }, []);
 
-  const brandOptions = [""];
+  const brandOptions = ["Paul Michael", "Moroccanoil"];
   const categoryOptions = ["Shampoo", "Conditioner", "Pomade", "Hair oil"];
 
   //@todo form select brand

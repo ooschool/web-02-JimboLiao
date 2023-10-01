@@ -4,7 +4,8 @@ import { Box, Button, Stack, TextField } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 
 const StyledLoginBlock = styled.div`
-  margin: 64px 128px;
+  margin: 64px auto;
+  max-width: 640px;
   border: solid 2px #3072ff;
   border-radius: 20px;
 
@@ -16,7 +17,7 @@ const StyledLoginBlock = styled.div`
   }
 `;
 const StyledFormContainer = styled.div`
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
 `;
 
@@ -48,14 +49,14 @@ const LoginPage = () => {
                 id="email"
                 label="E-mail"
                 type="email"
-                sx={{ paddingBottom: 1 }}
+                sx={{ paddingBottom: 2 }}
               />
               <TextField
                 required
                 id="password"
                 label="Password"
                 type="password"
-                sx={{ paddingBottom: 1 }}
+                sx={{ paddingBottom: 2 }}
               />
             </Box>
             <Box sx={{ paddingBottom: 8 }}>
@@ -73,7 +74,7 @@ const LoginPage = () => {
                     Login
                   </Button>
                 </Stack>
-                <Stack spacing={1}>
+                <Stack spacing={2}>
                   <Button
                     variant="contained"
                     startIcon={<GoogleIcon />}

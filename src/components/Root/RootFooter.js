@@ -28,12 +28,12 @@ const RootFooter = () => {
       <NavBar pages={pages} />
       <div className="contact-btn">
         <div className="facebook-link">
-          <a href="https://www.facebook.com" target="_blank">
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
             <i className="fa-brands fa-facebook"></i>
           </a>
         </div>
         <div className="map-link">
-          <a href="https://maps.google.com" target="_blank">
+          <a href="https://maps.google.com" target="_blank" rel="noreferrer">
             <i className="fa-solid fa-map-location-dot"></i>
           </a>
         </div>

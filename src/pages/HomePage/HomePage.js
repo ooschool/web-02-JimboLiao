@@ -118,7 +118,7 @@ const HomePage = () => {
           <div className="about-summary__title">
             <h2>About</h2>
           </div>
-          <Grid columnSpacing={2} rowSpacing={2}>
+          <Grid container columnSpacing={2} rowSpacing={2}>
             <Grid item xs={12} md={6}>
               <div className="about-summary__content">
                 <h3>Since 1999</h3>

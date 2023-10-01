@@ -44,7 +44,7 @@ const ProductDetailPage = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [productId]);
 
   // cart
   const { cart, setCart } = useCart();

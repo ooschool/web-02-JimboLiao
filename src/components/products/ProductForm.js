@@ -1,5 +1,10 @@
 import { Grid } from "@mui/material";
 import { FormSelect, SearchBar } from "../common";
+import styled from "styled-components";
+
+const StyledForm = styled.form`
+  padding-bottom: 16px;
+`;
 
 const ProductForm = ({
   handleSelectBrand,
@@ -9,7 +14,7 @@ const ProductForm = ({
   categoryOptions,
 }) => {
   return (
-    <form>
+    <StyledForm>
       <Grid container columnSpacing={2} rowSpacing={2}>
         <Grid item xs={12} md={4}>
           <label htmlFor="brand">Brand : </label>
@@ -34,7 +39,7 @@ const ProductForm = ({
           <SearchBar id="search" name="search" onChange={handleSearch} />
         </Grid>
       </Grid>
-    </form>
+    </StyledForm>
   );
 };
 
