@@ -1,8 +1,8 @@
 import { StyledContainer } from "../../components/common";
 import { styled } from "styled-components";
 import { ProductList, ProductForm } from "../../components/products";
-import { products, brandNames, productCategory } from "../../data/products";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const StyledProduct = styled.section`
   padding-top: 64px;
@@ -16,14 +16,31 @@ const StyledProduct = styled.section`
 `;
 
 const ProductsPage = () => {
-  const [productList, setProductList] = useState(products);
-  const [brandOptions] = useState(brandNames);
-  const [categoryOptions] = useState(productCategory);
-
   // window scroll to top
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // products
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/products/`)
+      .then((response) => {
+        if (Array.isArray(response.data)) {
+          setProducts(response.data);
+        } else {
+          console.error("Error: received data is not an array", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  const brandOptions = [""];
+  const categoryOptions = ["Shampoo", "Conditioner", "Pomade", "Hair oil"];
 
   //@todo form select brand
   const handleSelectBrand = (event) => {
@@ -52,7 +69,7 @@ const ProductsPage = () => {
             brandOptions={brandOptions}
             categoryOptions={categoryOptions}
           />
-          <ProductList products={productList}></ProductList>
+          <ProductList products={products}></ProductList>
         </StyledContainer>
       </StyledProduct>
     </main>

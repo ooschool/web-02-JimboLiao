@@ -1,12 +1,7 @@
 import { styled } from "styled-components";
 import { about1Img } from "../../images";
 import { useEffect } from "react";
-import {
-  StyledRow,
-  StyledContainer,
-  StyledColumn,
-  BackgroundImage,
-} from "../../components/common";
+import { StyledContainer, BackgroundImage } from "../../components/common";
 import { HairstylistList } from "../../components/about";
 import { Grid } from "@mui/material";
 
@@ -118,7 +113,7 @@ const AboutPage = () => {
               <StyledIframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3643.2727851481673!2d120.43649137519725!3d24.056696578462606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346946088f1e1a99%3A0xfcd8db491c82e69d!2z6auu6LyvIOWJqueHmeafkw!5e0!3m2!1szh-TW!2stw!4v1693986062145!5m2!1szh-TW!2stw"
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></StyledIframe>
             </Grid>
             <Grid item xs={12} md={6}>
