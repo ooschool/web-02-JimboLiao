@@ -1,4 +1,4 @@
-import { OrderFailed, OrderSuccessful } from "../../components/Order";
+import { OrderFailed, OrderSuccessful } from "../../components/order";
 
 const OrderPage = () => {
   const isFailed = false;
