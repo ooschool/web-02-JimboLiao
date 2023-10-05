@@ -7,7 +7,7 @@ import { ProductsPage } from "./pages/ProductsPage";
 import { ProductDetailPage } from "./pages/ProductDetailPage";
 import { CartPage } from "./pages/CartPage";
 import { LoginPage } from "./pages/LoginPage";
-import { CartProvider } from "./context/CartContext";
+import CartProvider from "./context/CartContext";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { SignupPage } from "./pages/SignupPage";
 import { PaymentPage } from "./pages/PaymentPage";

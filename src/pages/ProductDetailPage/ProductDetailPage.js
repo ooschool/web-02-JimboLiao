@@ -8,8 +8,8 @@ import {
 } from "../../components/common";
 import { styled } from "styled-components";
 import { ProductInfo, ProductIntro } from "../../components/products";
-import { useCart } from "../../context/CartContext";
-import { useState, useEffect } from "react";
+import { CartContext } from "../../context/CartContext";
+import { useState, useEffect, useContext } from "react";
 import { Button } from "@mui/material";
 import axios from "axios";
 
@@ -47,7 +47,7 @@ const ProductDetailPage = () => {
   }, [productId]);
 
   // cart
-  const { cart, setCart } = useCart();
+  const { cart, setCart } = useContext(CartContext);
   const [amount, setAmount] = useState(0);
   const handleAddToCart = () => {
     // Check if the product is already in the cart

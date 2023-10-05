@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 import { ProductImage, StyledButton } from "../common";
-import { useCart } from "../../context/CartContext";
 import { Button } from "@mui/material";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const StyledItemContainer = styled.div`
   border: 2px solid #ccc;
@@ -48,7 +49,7 @@ const StyledItemInfo = styled.div`
 `;
 
 const CartItem = ({ item }) => {
-  const { cart, setCart } = useCart();
+  const { cart, setCart } = useContext(CartContext);
   const handleDeleteItem = () => {
     const idx = cart?.findIndex((current) => item?.id === current.id);
     if (idx !== -1) {

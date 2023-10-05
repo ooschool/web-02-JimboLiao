@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 import { Box, Button, Stack, TextField } from "@mui/material";
 import { StyledContainer, StyledLink } from "../../components/common";
-import { useCart } from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
 const StyledPaymentTitle = styled.div`
   padding: 32px 0px;
@@ -10,7 +11,7 @@ const StyledPaymentTitle = styled.div`
 `;
 
 const PaymentPage = () => {
-  const { cart, setCart } = useCart();
+  const { cart, setCart } = useContext(CartContext);
 
   const handleOrder = () => {
     const newCart = cart.map((item) => {

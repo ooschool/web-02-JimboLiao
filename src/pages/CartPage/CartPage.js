@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
 import { StyledContainer, StyledLink } from "../../components/common";
-import { useCart } from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import { CartItem, CartSummary, EmptyCart } from "../../components/cart";
 import { Button, Stack } from "@mui/material";
+import { useContext } from "react";
 
 const StyledCart = styled.section`
   padding-top: 64px;
@@ -16,7 +17,7 @@ const StyledCart = styled.section`
 `;
 
 const CartPage = () => {
-  const { cart, deliverPrice, subTotal, grandTotal } = useCart();
+  const { cart, deliverPrice, subTotal, grandTotal } = useContext(CartContext);
   //@todo onclick
   const handleCheckOut = (event) => {
     console.log(event.target);
