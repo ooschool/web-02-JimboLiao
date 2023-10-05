@@ -7,9 +7,9 @@ const StyledForm = styled.form`
 `;
 
 const ProductForm = ({
-  handleSelectBrand,
-  handleSelectCategory,
-  handleSearch,
+  onSelectBrand,
+  onSelectCategory,
+  onSearch,
   brandOptions,
   categoryOptions,
 }) => {
@@ -22,7 +22,7 @@ const ProductForm = ({
             name="brand"
             id="brand"
             options={brandOptions}
-            onChange={handleSelectBrand}
+            onChange={onSelectBrand}
           />
         </Grid>
         <Grid item xs={12} md={4}>
@@ -31,12 +31,12 @@ const ProductForm = ({
             name="category"
             id="category"
             options={categoryOptions}
-            onChange={handleSelectCategory}
+            onChange={onSelectCategory}
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <label htmlFor="search">Search : </label>
-          <SearchBar id="search" name="search" onChange={handleSearch} />
+          <SearchBar id="search" name="search" onChange={onSearch} />
         </Grid>
       </Grid>
     </StyledForm>

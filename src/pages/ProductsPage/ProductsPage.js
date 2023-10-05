@@ -63,9 +63,9 @@ const ProductsPage = () => {
             <h2>Products</h2>
           </div>
           <ProductForm
-            handleSelectBrand={handleSelectBrand}
-            handleSelectCategory={handleSelectCategory}
-            handleSearch={handleSearch}
+            onSelectBrand={handleSelectBrand}
+            onSelectCategory={handleSelectCategory}
+            onSearch={handleSearch}
             brandOptions={brandOptions}
             categoryOptions={categoryOptions}
           />
