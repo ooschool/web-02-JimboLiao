@@ -22,7 +22,9 @@ const ProductForm = ({
             name="brand"
             id="brand"
             options={brandOptions}
-            onChange={onSelectBrand}
+            onChange={(event) => {
+              onSelectBrand && onSelectBrand(event);
+            }}
           />
         </Grid>
         <Grid item xs={12} md={4}>
@@ -31,12 +33,20 @@ const ProductForm = ({
             name="category"
             id="category"
             options={categoryOptions}
-            onChange={onSelectCategory}
+            onChange={(event) => {
+              onSelectCategory && onSelectCategory(event);
+            }}
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <label htmlFor="search">Search : </label>
-          <SearchBar id="search" name="search" onChange={onSearch} />
+          <SearchBar
+            id="search"
+            name="search"
+            onChange={(event) => {
+              onSearch && onSearch(event);
+            }}
+          />
         </Grid>
       </Grid>
     </StyledForm>
