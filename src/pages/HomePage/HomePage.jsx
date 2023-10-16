@@ -3,15 +3,13 @@ import { about1Img, jumbotron1Img } from "../../images";
 import {
   LogoLink,
   StyledContainer,
-  StyledColumn,
-  StyledRow,
   StyledLink,
   BackgroundImage,
 } from "../../components/common";
-import { brands, brand1Products, brand2Products } from "../../data/products";
 import { ProductSummary } from "../../components/products";
-import { Button } from "@mui/material";
-const allBrandProducts = [brand1Products, brand2Products];
+import { Button, Grid } from "@mui/material";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const StyledJumbotron = styled.section`
   padding: 240px 0px;
@@ -88,6 +86,22 @@ const StyledProductSummary = styled.section`
 `;
 
 const HomePage = () => {
+  const [brands, setBrands] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/brands?_embed=products")
+      .then((response) => {
+        if (Array.isArray(response.data)) {
+          setBrands(response.data);
+        } else {
+          console.error("Error: received data is not an array", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <main>
       {/* jumbotron */}
@@ -104,8 +118,8 @@ const HomePage = () => {
           <div className="about-summary__title">
             <h2>About</h2>
           </div>
-          <StyledRow>
-            <StyledColumn $num={6}>
+          <Grid container columnSpacing={2} rowSpacing={2}>
+            <Grid item xs={12} md={6}>
               <div className="about-summary__content">
                 <h3>Since 1999</h3>
                 <p>
@@ -123,11 +137,11 @@ const HomePage = () => {
                   </Button>
                 </div>
               </div>
-            </StyledColumn>
-            <StyledColumn $num={6}>
+            </Grid>
+            <Grid item xs={12} md={6}>
               <BackgroundImage $backgroundImageUrl={about1Img} />
-            </StyledColumn>
-          </StyledRow>
+            </Grid>
+          </Grid>
         </StyledContainer>
       </StyledAboutSummary>
 
@@ -137,7 +151,7 @@ const HomePage = () => {
           <div className="products-summary__title">
             <h2>Products</h2>
           </div>
-          <ProductSummary brands={brands} allBrandProducts={allBrandProducts} />
+          <ProductSummary brands={brands} />
           <footer className="products-summary__footer">
             <p>Find the best product for you!</p>
             <Button variant="contained" component={StyledLink} to="/products">

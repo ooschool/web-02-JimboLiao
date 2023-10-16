@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { getProductById, getBrandByBrandName } from "../../data/products";
 import {
   StyledContainer,
   StyledRow,
@@ -9,9 +8,10 @@ import {
 } from "../../components/common";
 import { styled } from "styled-components";
 import { ProductInfo, ProductIntro } from "../../components/products";
-import { useCart } from "../../context/CartContext";
-import { useState, useEffect } from "react";
+import { CartContext } from "../../context/CartContext";
+import { useState, useEffect, useContext } from "react";
 import { Button } from "@mui/material";
+import axios from "axios";
 
 const StyledProductDetail = styled.section`
   padding-top: 64px;
@@ -29,9 +29,25 @@ const ProductDetailPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // products
   const { productId } = useParams();
-  const product = getProductById(productId);
-  const { cart, setCart } = useCart();
+  const [product, setProduct] = useState([]);
+  const [brand, setBrand] = useState(null);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/products/${productId}?_expand=brand`)
+      .then((response) => {
+        setProduct(response.data);
+        setBrand(response.data.brand);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [productId]);
+
+  // cart
+  const { cart, setCart } = useContext(CartContext);
   const [amount, setAmount] = useState(0);
   const handleAddToCart = () => {
     // Check if the product is already in the cart
@@ -60,7 +76,6 @@ const ProductDetailPage = () => {
     );
   /// render the product detail
   else {
-    const brand = getBrandByBrandName(product.brand);
     return (
       <main>
         <StyledProductDetail>

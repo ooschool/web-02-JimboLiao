@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Root } from "./components/Root";
+import { Root } from "./components/root";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ErrorPage } from "./pages/ErrorPage";
@@ -7,7 +7,7 @@ import { ProductsPage } from "./pages/ProductsPage";
 import { ProductDetailPage } from "./pages/ProductDetailPage";
 import { CartPage } from "./pages/CartPage";
 import { LoginPage } from "./pages/LoginPage";
-import { CartProvider } from "./context/CartContext";
+import CartProvider from "./context/CartContext";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { SignupPage } from "./pages/SignupPage";
 import { PaymentPage } from "./pages/PaymentPage";

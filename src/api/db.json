@@ -1,0 +1,106 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "imgUrl": "/images/products-1-1.png",
+      "productName": "product name",
+      "category": "Shampoo",
+      "brandId": 1,
+      "price": 230,
+      "reserve": 5,
+      "description": "ajoppe lsttdo jfek bvnoo",
+      "detail": "jfeog jdoglw ccojtex lj4tje gfjiordsjlkg, jorvhe febbwemy, dljtwao. docmteh dktjeosy kldt lemmor kdwaa thep eojtole, jlteo. jifoyek jtiee, lkdmemy. jkydjomyeo, klsafjlye kdlsgre omportjd yjelxoysemy aahnkle mdktla  jkdoaaam rhyel jym lpydblrj igorjlahykl jooer, yjoas. jaltjam kejtoa jdia klrtjl comte jyoahyelv  opye eitjtoa ekjymme layeo meoyte yetelah."
+    },
+    {
+      "id": 2,
+      "imgUrl": "/images/products-1-2.png",
+      "productName": "product name",
+      "category": "Conditioner",
+      "brandId": 1,
+      "price": 180,
+
+      "reserve": 3,
+      "description": "abouc gooct povgooct pov okr bvn joggert avvieate overation",
+      "detail": "fjl4ljy jfoejy e0y3ol yjo jrla gjojr4yos jlk, rjroz. rjioysfkep jettommerance loppounity saltum autioppor pacomb boxrinch peacossunity fearoue jamaoran. Contiunity fearouse egominary he febbwemy, dljtwao. docmteh ninjility "
+    },
+    {
+      "id": 3,
+      "imgUrl": "/images/products-1-3.png",
+      "productName": "product name",
+      "category": "Pomade",
+      "brandId": 1,
+      "price": 350,
+      "reserve": 3,
+      "description": "rt avvi eate overation gert",
+      "detail": "fjl4ljy jfoejy e0y3ol yjo jrla gjojr4yos jlk, rjroz. rjioysfkep jettommer pounity saltum autiopp ance loppounity saltum autioppor pacomb boxrinch peacossue jamaoran. Contiunity fearouse egominary ninjility "
+    },
+    {
+      "id": 4,
+      "imgUrl": "/images/products-1-4.png",
+      "productName": "product name",
+      "category": "Shampoo",
+      "brandId": 1,
+      "price": 400,
+      "reserve": 3,
+      "description": "fjeitg oostw gowb jodeg jgeatt opyedg",
+      "detail": "fjl4lgjojr4yos jlk, rjroz. rjioysfkep jettommerance loppounity saltum autioppor pacomb boxrinch peacossue jamaoran. Contiunity fearouse egominary ninjility "
+    },
+    {
+      "id": 5,
+      "imgUrl": "/images/products-1-5.png",
+      "productName": "product name",
+      "category": "Conditioner",
+      "brandId": 1,
+      "price": 360,
+      "reserve": 3,
+      "description": "eitg oostw go eate overati oostw gowb jod",
+      "detail": "jfoejy e0y3ol yjo jrla gk, rjroz. rjioysfkep jettommerance loppounity saltum autioppor pacomb boxrinch peacossue jamaoran. Contiunity fearouse egominary ninjility "
+    },
+    {
+      "id": 6,
+      "imgUrl": "/images/products-2-1.png",
+      "productName": "product name",
+      "category": "Hair oil",
+      "brandId": 2,
+      "price": 450,
+      "reserve": 3,
+      "description": "ggert avvieate overati",
+      "detail": "fjl4ljy j. rjioysfkep jettommerance loppounity saltum autioppor pacomb boxrinch peacossy3ol yjo jrla gjojr4yos jlk, rjroz. rjioysfkep jettommerance loppounity saltum autioppor pacomb boxrinch peacossue jamaoran. Contiunity fearouse egominary ninjility "
+    },
+    {
+      "id": 7,
+      "imgUrl": "/images/products-2-2.png",
+      "productName": "product name",
+      "category": "Hail oil",
+      "brandId": 2,
+      "price": 350,
+      "reserve": 3,
+      "description": "fjeitg oostw gow",
+      "detail": ". rjioysfkep jettoml yjo jrla gjojr4yos jlk, rjroz. rjioysfkep jettommerance loppounity saltum autioppor pacomb boxrinch peacossue jamaoran. Contiunity fearouse egominary ninjility "
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "brandName": "Paul Michael",
+      "description": "asjdfl joe commant mountter comenet coatpe jlcgjeo abberaviation volunt runambur teeosse zoe flusert lppuscri sop fjteak abektor commauetn"
+    },
+    {
+      "id": 2,
+      "brandName": "Moroccanoil",
+      "description": "asjdfl joe commant mountter comenet coatpe jlcgjeo abberaviation volunt runambur teeosse zoe flusert lppuscri sop fjteak abektor commauetn"
+    }
+  ],
+  "hairstylists": [
+    {
+      "id": 1,
+      "description": "Joe is an experienced hairstylist. lltc jll go cdoejede scoot koop jssgo cdoe sco joo cxoolo op jssgo cdoeede jll go cdoeed eede scode sco joo cxool",
+      "imgUrl": "/images/hairstylist-1.png"
+    },
+    {
+      "id": 2,
+      "description": "May is an experienced hairstylist. lltc jll go cdoejede scoot koop jssgo cdoe sco joo cxoolo op jssgo cdoeede jll go cdoeed eede scode sco joo cxool",
+      "imgUrl": "/images/hairstylist-2.png"
+    }
+  ]
+}

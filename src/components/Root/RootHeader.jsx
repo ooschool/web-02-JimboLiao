@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import NavBar from "../common/NavBar";
 import { styled } from "styled-components";
 import LogoLink from "../common/LogoLink";
-
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import MenuDrawer from "../common/MenuDrawer";
 const StyledHeader = styled.header`
   background-color: #3072ff;
   display: flex;
@@ -27,20 +29,37 @@ const StyledHeader = styled.header`
   .login-btn {
     margin-right: 25px;
   }
+  .menu-container {
+    margin-right: 25px;
+  }
 `;
 
 const RootHeader = () => {
+  const theme = useTheme();
+  const isDownMd = useMediaQuery(theme.breakpoints.down("md"));
+  const pages = ["about", "products", "cart"];
+
   return (
     <StyledHeader>
       <div className="logo">
         <LogoLink $logoWidth={"32px"} />
       </div>
-      <div className="btn-container">
-        <NavBar />
-        <div className="login-btn">
-          <Link to="/login">Login</Link>
+      {isDownMd ? (
+        // screen size below md
+        <div className="menu-container">
+          <MenuDrawer pages={pages} />
         </div>
-      </div>
+      ) : (
+        // screen size over md
+        <>
+          <div className="btn-container">
+            <NavBar pages={pages} />
+            <div className="login-btn">
+              <Link to="/login">LOGIN</Link>
+            </div>
+          </div>
+        </>
+      )}
     </StyledHeader>
   );
 };
