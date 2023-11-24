@@ -87,9 +87,12 @@ const StyledProductSummary = styled.section`
 
 const HomePage = () => {
   const [brands, setBrands] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [brandsWithProducts, setBrandsWithProducts] = useState([]);
+
   useEffect(() => {
     axios
-      .get("http://localhost:4000/brands?_embed=products")
+      .get("http://localhost:4000/brands")
       .then((response) => {
         if (Array.isArray(response.data)) {
           setBrands(response.data);
@@ -101,6 +104,31 @@ const HomePage = () => {
         console.error(error);
       });
   }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/products")
+      .then((response) => {
+        if (Array.isArray(response.data)) {
+          setProducts(response.data);
+        } else {
+          console.error("Error: received data is not an array", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    const results = brands.map((brand) => {
+      const brandProducts = products.filter(
+        (product) => product.brandId === brand.id
+      );
+      brand.products = brandProducts;
+      return brand;
+    });
+    setBrandsWithProducts(results);
+  }, [brands, products]);
 
   return (
     <main>
@@ -151,7 +179,7 @@ const HomePage = () => {
           <div className="products-summary__title">
             <h2>Products</h2>
           </div>
-          <ProductSummary brands={brands} />
+          <ProductSummary brandsWithProducts={brandsWithProducts} />
           <footer className="products-summary__footer">
             <p>Find the best product for you!</p>
             <Button variant="contained" component={StyledLink} to="/products">

@@ -38,7 +38,7 @@ const ProductDetailPage = () => {
     axios
       .get(`http://localhost:4000/products/${productId}?_expand=brand`)
       .then((response) => {
-        setProduct(response.data);
+        setProduct(response.data.product);
         setBrand(response.data.brand);
       })
       .catch((error) => {

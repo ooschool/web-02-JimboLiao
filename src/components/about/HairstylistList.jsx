@@ -15,8 +15,9 @@ const HairstylistList = () => {
   const [hairstylists, setHairstylists] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/hairstylists`)
+      .get(`http://localhost:4000/hairstylists/`)
       .then((response) => {
+        console.log(response);
         // 確保 response.data 是一個陣列
         if (Array.isArray(response.data)) {
           setHairstylists(response.data);
