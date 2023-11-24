@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { StyledContainer, StyledLink } from "../../components/common";
 import { Box, Button, Stack, TextField } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
+import { useState } from "react";
 
 const StyledLoginBlock = styled.div`
   margin: 64px auto;
@@ -23,9 +24,12 @@ const StyledFormContainer = styled.div`
 
 const LoginPage = () => {
   const formBoxStyle = { display: "flex", flexDirection: "column" };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   //@todo onClicks
   const handleLogin = (event) => {
-    console.log(event.target);
+    console.log("email = ", email);
+    console.log("password = ", password);
   };
   const handleForgot = (event) => {
     console.log(event.target);
@@ -35,6 +39,12 @@ const LoginPage = () => {
   };
   const handleSignUp = (event) => {
     console.log(event.target);
+  };
+  const handleLoginText = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePasswordText = (event) => {
+    setPassword(event.target.value);
   };
 
   return (
@@ -50,6 +60,8 @@ const LoginPage = () => {
                 label="E-mail"
                 type="email"
                 sx={{ paddingBottom: 2 }}
+                value={email}
+                onChange={handleLoginText}
               />
               <TextField
                 required
@@ -57,6 +69,8 @@ const LoginPage = () => {
                 label="Password"
                 type="password"
                 sx={{ paddingBottom: 2 }}
+                value={password}
+                onChange={handlePasswordText}
               />
             </Box>
             <Box sx={{ paddingBottom: 8 }}>
