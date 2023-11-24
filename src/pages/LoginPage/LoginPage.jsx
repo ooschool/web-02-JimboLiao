@@ -3,6 +3,7 @@ import { StyledContainer, StyledLink } from "../../components/common";
 import { Box, Button, Stack, TextField } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import { useState } from "react";
+import axios from "axios";
 
 const StyledLoginBlock = styled.div`
   margin: 64px auto;
@@ -28,8 +29,19 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   //@todo onClicks
   const handleLogin = (event) => {
-    console.log("email = ", email);
-    console.log("password = ", password);
+    axios
+      .post(`http://localhost:4000/members/login`, {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        const token = response.data.token;
+        console.log(token);
+        document.cookie = `token=${token}`;
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
   const handleForgot = (event) => {
     console.log(event.target);
