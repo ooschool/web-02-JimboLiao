@@ -38,6 +38,7 @@ const LoginPage = () => {
         const token = response.data.token;
         console.log(token);
         document.cookie = `token=${token}`;
+        window.location.href = "/";
       })
       .catch((error) => {
         console.error("Error:", error);
