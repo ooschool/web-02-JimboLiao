@@ -9,7 +9,7 @@ import {
 import { ProductSummary } from "../../components/products";
 import { Button, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { getProductsApi, getBrandsApi } from "../../api";
 
 const StyledJumbotron = styled.section`
   padding: 240px 0px;
@@ -91,32 +91,19 @@ const HomePage = () => {
   const [brandsWithProducts, setBrandsWithProducts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/brands")
-      .then((response) => {
-        if (Array.isArray(response.data)) {
-          setBrands(response.data);
-        } else {
-          console.error("Error: received data is not an array", response.data);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const getAndSetBrands = async () => {
+      const data = await getBrandsApi();
+      setBrands(data);
+    };
+    getAndSetBrands();
   }, []);
+
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/products")
-      .then((response) => {
-        if (Array.isArray(response.data)) {
-          setProducts(response.data);
-        } else {
-          console.error("Error: received data is not an array", response.data);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const getAndSetProducts = async () => {
+      const data = await getProductsApi();
+      setProducts(data);
+    };
+    getAndSetProducts();
   }, []);
 
   useEffect(() => {

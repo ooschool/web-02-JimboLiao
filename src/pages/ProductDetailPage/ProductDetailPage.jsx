@@ -11,7 +11,7 @@ import { ProductInfo, ProductIntro } from "../../components/products";
 import { CartContext } from "../../context/CartContext";
 import { useState, useEffect, useContext } from "react";
 import { Button } from "@mui/material";
-import axios from "axios";
+import { getProductAndBrandApi } from "../../api";
 
 const StyledProductDetail = styled.section`
   padding-top: 64px;
@@ -35,15 +35,12 @@ const ProductDetailPage = () => {
   const [product, setProduct] = useState([]);
   const [brand, setBrand] = useState(null);
   useEffect(() => {
-    axios
-      .get(`http://localhost:4000/products/${productId}?_expand=brand`)
-      .then((response) => {
-        setProduct(response.data.product);
-        setBrand(response.data.brand);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const getAndSetProductAndBrand = async () => {
+      const data = await getProductAndBrandApi(productId);
+      setProduct(data.product);
+      setBrand(data.brand);
+    };
+    getAndSetProductAndBrand();
   }, [productId]);
 
   // cart

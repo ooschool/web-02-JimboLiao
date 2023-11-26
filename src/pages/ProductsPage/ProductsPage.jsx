@@ -2,7 +2,7 @@ import { StyledContainer } from "../../components/common";
 import { styled } from "styled-components";
 import { ProductList, ProductForm } from "../../components/products";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { getProductsApi } from "../../api";
 
 const StyledProduct = styled.section`
   padding-top: 64px;
@@ -25,18 +25,11 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:4000/products/`)
-      .then((response) => {
-        if (Array.isArray(response.data)) {
-          setProducts(response.data);
-        } else {
-          console.error("Error: received data is not an array", response.data);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const getAndSetProducts = async () => {
+      const data = await getProductsApi();
+      setProducts(data);
+    };
+    getAndSetProducts();
   }, []);
 
   const brandOptions = ["Paul Michael", "Moroccanoil"];

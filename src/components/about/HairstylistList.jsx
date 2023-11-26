@@ -1,7 +1,7 @@
 import { HairstylistImage } from "../common";
 import { styled } from "styled-components";
 import { Grid } from "@mui/material";
-import axios from "axios";
+import { getHairstylistsApi } from "../../api";
 import { useState, useEffect } from "react";
 
 const StyledImgContainer = styled.div`
@@ -14,20 +14,11 @@ const StyledDescriptionContainer = styled.div`
 const HairstylistList = () => {
   const [hairstylists, setHairstylists] = useState([]);
   useEffect(() => {
-    axios
-      .get(`http://localhost:4000/hairstylists/`)
-      .then((response) => {
-        console.log(response);
-        // 確保 response.data 是一個陣列
-        if (Array.isArray(response.data)) {
-          setHairstylists(response.data);
-        } else {
-          console.error("Error: received data is not an array", response.data);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const getAndSetHairstylists = async () => {
+      const data = await getHairstylistsApi();
+      setHairstylists(data);
+    };
+    getAndSetHairstylists();
   }, []);
 
   return (
